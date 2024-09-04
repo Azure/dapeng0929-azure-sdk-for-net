@@ -6,6 +6,7 @@
 #nullable disable
 
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Azure.Core;
 using Azure.Identity;
@@ -17,15 +18,18 @@ namespace Azure.Monitor.Ingestion.Samples
     {
         [Test]
         [Ignore("Only validating compilation of examples")]
-        public void Example_Upload_ShortVersion()
+        public void Example_LogsIngestionClient_Upload_ShortVersion()
         {
-            Uri endpoint = new Uri("<endpoint>");
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
             TokenCredential credential = new DefaultAzureCredential();
             LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-new object()
+new
+{
+key = new object(),
+}
             });
             Response response = client.Upload("<ruleId>", "<streamName>", content);
 
@@ -34,15 +38,18 @@ new object()
 
         [Test]
         [Ignore("Only validating compilation of examples")]
-        public async Task Example_Upload_ShortVersion_Async()
+        public async Task Example_LogsIngestionClient_Upload_ShortVersion_Async()
         {
-            Uri endpoint = new Uri("<endpoint>");
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
             TokenCredential credential = new DefaultAzureCredential();
             LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-new object()
+new
+{
+key = new object(),
+}
             });
             Response response = await client.UploadAsync("<ruleId>", "<streamName>", content);
 
@@ -51,15 +58,52 @@ new object()
 
         [Test]
         [Ignore("Only validating compilation of examples")]
-        public void Example_Upload_AllParameters()
+        public void Example_LogsIngestionClient_Upload_ShortVersion_Convenience()
         {
-            Uri endpoint = new Uri("<endpoint>");
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
+            TokenCredential credential = new DefaultAzureCredential();
+            LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+            Response response = client.Upload("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+            {
+new Dictionary<string, BinaryData>
+{
+["key"] = BinaryData.FromObjectAsJson(new object())
+}
+            });
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_LogsIngestionClient_Upload_ShortVersion_Convenience_Async()
+        {
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
+            TokenCredential credential = new DefaultAzureCredential();
+            LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+            Response response = await client.UploadAsync("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+            {
+new Dictionary<string, BinaryData>
+{
+["key"] = BinaryData.FromObjectAsJson(new object())
+}
+            });
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_LogsIngestionClient_Upload_AllParameters()
+        {
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
             TokenCredential credential = new DefaultAzureCredential();
             LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-new object()
+new
+{
+key = new object(),
+}
             });
             Response response = client.Upload("<ruleId>", "<streamName>", content, contentEncoding: "<contentEncoding>");
 
@@ -68,19 +112,56 @@ new object()
 
         [Test]
         [Ignore("Only validating compilation of examples")]
-        public async Task Example_Upload_AllParameters_Async()
+        public async Task Example_LogsIngestionClient_Upload_AllParameters_Async()
         {
-            Uri endpoint = new Uri("<endpoint>");
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
             TokenCredential credential = new DefaultAzureCredential();
             LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
             using RequestContent content = RequestContent.Create(new object[]
             {
-new object()
+new
+{
+key = new object(),
+}
             });
             Response response = await client.UploadAsync("<ruleId>", "<streamName>", content, contentEncoding: "<contentEncoding>");
 
             Console.WriteLine(response.Status);
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public void Example_LogsIngestionClient_Upload_AllParameters_Convenience()
+        {
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
+            TokenCredential credential = new DefaultAzureCredential();
+            LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+            Response response = client.Upload("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+            {
+new Dictionary<string, BinaryData>
+{
+["key"] = BinaryData.FromObjectAsJson(new object())
+}
+            }, contentEncoding: "<contentEncoding>");
+        }
+
+        [Test]
+        [Ignore("Only validating compilation of examples")]
+        public async Task Example_LogsIngestionClient_Upload_AllParameters_Convenience_Async()
+        {
+            Uri endpoint = new Uri("<https://my-service.azure.com>");
+            TokenCredential credential = new DefaultAzureCredential();
+            LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+            Response response = await client.UploadAsync("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+            {
+new Dictionary<string, BinaryData>
+{
+["key"] = BinaryData.FromObjectAsJson(new object())
+}
+            }, contentEncoding: "<contentEncoding>");
         }
     }
 }

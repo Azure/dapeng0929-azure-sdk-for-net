@@ -1,17 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doc>
   <members>
+    <member name="UploadAsync(string,string,IEnumerable{IDictionary{string,BinaryData}},string,CancellationToken)">
+      <example>
+This sample shows how to call UploadAsync.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+TokenCredential credential = new DefaultAzureCredential();
+LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+Response response = await client.UploadAsync("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+{
+    new Dictionary<string, BinaryData>
+    {
+        ["key"] = BinaryData.FromObjectAsJson(new object())
+    }
+});
+]]></code>
+This sample shows how to call UploadAsync with all parameters.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+TokenCredential credential = new DefaultAzureCredential();
+LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+Response response = await client.UploadAsync("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+{
+    new Dictionary<string, BinaryData>
+    {
+        ["key"] = BinaryData.FromObjectAsJson(new object())
+    }
+}, contentEncoding: "<contentEncoding>");
+]]></code></example>
+    </member>
+    <member name="Upload(string,string,IEnumerable{IDictionary{string,BinaryData}},string,CancellationToken)">
+      <example>
+This sample shows how to call Upload.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+TokenCredential credential = new DefaultAzureCredential();
+LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+Response response = client.Upload("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+{
+    new Dictionary<string, BinaryData>
+    {
+        ["key"] = BinaryData.FromObjectAsJson(new object())
+    }
+});
+]]></code>
+This sample shows how to call Upload with all parameters.
+<code><![CDATA[
+Uri endpoint = new Uri("<https://my-service.azure.com>");
+TokenCredential credential = new DefaultAzureCredential();
+LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
+
+Response response = client.Upload("<ruleId>", "<streamName>", new IDictionary<string, BinaryData>[]
+{
+    new Dictionary<string, BinaryData>
+    {
+        ["key"] = BinaryData.FromObjectAsJson(new object())
+    }
+}, contentEncoding: "<contentEncoding>");
+]]></code></example>
+    </member>
     <member name="UploadAsync(string,string,RequestContent,string,RequestContext)">
       <example>
 This sample shows how to call UploadAsync.
 <code><![CDATA[
-Uri endpoint = new Uri("<endpoint>");
+Uri endpoint = new Uri("<https://my-service.azure.com>");
 TokenCredential credential = new DefaultAzureCredential();
 LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    new object()
+    new
+    {
+        key = new object(),
+    }
 });
 Response response = await client.UploadAsync("<ruleId>", "<streamName>", content);
 
@@ -19,13 +84,16 @@ Console.WriteLine(response.Status);
 ]]></code>
 This sample shows how to call UploadAsync with all parameters and request content.
 <code><![CDATA[
-Uri endpoint = new Uri("<endpoint>");
+Uri endpoint = new Uri("<https://my-service.azure.com>");
 TokenCredential credential = new DefaultAzureCredential();
 LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    new object()
+    new
+    {
+        key = new object(),
+    }
 });
 Response response = await client.UploadAsync("<ruleId>", "<streamName>", content, contentEncoding: "<contentEncoding>");
 
@@ -36,13 +104,16 @@ Console.WriteLine(response.Status);
       <example>
 This sample shows how to call Upload.
 <code><![CDATA[
-Uri endpoint = new Uri("<endpoint>");
+Uri endpoint = new Uri("<https://my-service.azure.com>");
 TokenCredential credential = new DefaultAzureCredential();
 LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    new object()
+    new
+    {
+        key = new object(),
+    }
 });
 Response response = client.Upload("<ruleId>", "<streamName>", content);
 
@@ -50,13 +121,16 @@ Console.WriteLine(response.Status);
 ]]></code>
 This sample shows how to call Upload with all parameters and request content.
 <code><![CDATA[
-Uri endpoint = new Uri("<endpoint>");
+Uri endpoint = new Uri("<https://my-service.azure.com>");
 TokenCredential credential = new DefaultAzureCredential();
 LogsIngestionClient client = new LogsIngestionClient(endpoint, credential);
 
 using RequestContent content = RequestContent.Create(new object[]
 {
-    new object()
+    new
+    {
+        key = new object(),
+    }
 });
 Response response = client.Upload("<ruleId>", "<streamName>", content, contentEncoding: "<contentEncoding>");
 
