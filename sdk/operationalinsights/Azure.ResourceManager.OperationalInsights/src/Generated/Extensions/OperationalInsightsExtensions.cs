@@ -71,6 +71,25 @@ namespace Azure.ResourceManager.OperationalInsights
         }
 
         /// <summary>
+        /// Gets an object representing an <see cref="OperationalInsightsClusterResource" /> along with the instance operations that can be performed on it but with no data.
+        /// You can use <see cref="OperationalInsightsClusterResource.CreateResourceIdentifier" /> to create an <see cref="OperationalInsightsClusterResource" /> <see cref="ResourceIdentifier" /> from its components.
+        /// <item>
+        /// <term>Mocking</term>
+        /// <description>To mock this method, please mock <see cref="MockableOperationalInsightsArmClient.GetOperationalInsightsClusterResource(ResourceIdentifier)"/> instead.</description>
+        /// </item>
+        /// </summary>
+        /// <param name="client"> The <see cref="ArmClient" /> instance the method will execute against. </param>
+        /// <param name="id"> The resource ID of the resource to get. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="client"/> is null. </exception>
+        /// <returns> Returns a <see cref="OperationalInsightsClusterResource"/> object. </returns>
+        public static OperationalInsightsClusterResource GetOperationalInsightsClusterResource(this ArmClient client, ResourceIdentifier id)
+        {
+            Argument.AssertNotNull(client, nameof(client));
+
+            return GetMockableOperationalInsightsArmClient(client).GetOperationalInsightsClusterResource(id);
+        }
+
+        /// <summary>
         /// Gets an object representing an <see cref="OperationalInsightsDataExportResource" /> along with the instance operations that can be performed on it but with no data.
         /// You can use <see cref="OperationalInsightsDataExportResource.CreateResourceIdentifier" /> to create an <see cref="OperationalInsightsDataExportResource" /> <see cref="ResourceIdentifier" /> from its components.
         /// <item>
@@ -147,25 +166,6 @@ namespace Azure.ResourceManager.OperationalInsights
         }
 
         /// <summary>
-        /// Gets an object representing a <see cref="StorageInsightResource" /> along with the instance operations that can be performed on it but with no data.
-        /// You can use <see cref="StorageInsightResource.CreateResourceIdentifier" /> to create a <see cref="StorageInsightResource" /> <see cref="ResourceIdentifier" /> from its components.
-        /// <item>
-        /// <term>Mocking</term>
-        /// <description>To mock this method, please mock <see cref="MockableOperationalInsightsArmClient.GetStorageInsightResource(ResourceIdentifier)"/> instead.</description>
-        /// </item>
-        /// </summary>
-        /// <param name="client"> The <see cref="ArmClient" /> instance the method will execute against. </param>
-        /// <param name="id"> The resource ID of the resource to get. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="client"/> is null. </exception>
-        /// <returns> Returns a <see cref="StorageInsightResource"/> object. </returns>
-        public static StorageInsightResource GetStorageInsightResource(this ArmClient client, ResourceIdentifier id)
-        {
-            Argument.AssertNotNull(client, nameof(client));
-
-            return GetMockableOperationalInsightsArmClient(client).GetStorageInsightResource(id);
-        }
-
-        /// <summary>
         /// Gets an object representing an <see cref="OperationalInsightsSavedSearchResource" /> along with the instance operations that can be performed on it but with no data.
         /// You can use <see cref="OperationalInsightsSavedSearchResource.CreateResourceIdentifier" /> to create an <see cref="OperationalInsightsSavedSearchResource" /> <see cref="ResourceIdentifier" /> from its components.
         /// <item>
@@ -185,41 +185,22 @@ namespace Azure.ResourceManager.OperationalInsights
         }
 
         /// <summary>
-        /// Gets an object representing an <see cref="OperationalInsightsClusterResource" /> along with the instance operations that can be performed on it but with no data.
-        /// You can use <see cref="OperationalInsightsClusterResource.CreateResourceIdentifier" /> to create an <see cref="OperationalInsightsClusterResource" /> <see cref="ResourceIdentifier" /> from its components.
+        /// Gets an object representing a <see cref="StorageInsightResource" /> along with the instance operations that can be performed on it but with no data.
+        /// You can use <see cref="StorageInsightResource.CreateResourceIdentifier" /> to create a <see cref="StorageInsightResource" /> <see cref="ResourceIdentifier" /> from its components.
         /// <item>
         /// <term>Mocking</term>
-        /// <description>To mock this method, please mock <see cref="MockableOperationalInsightsArmClient.GetOperationalInsightsClusterResource(ResourceIdentifier)"/> instead.</description>
+        /// <description>To mock this method, please mock <see cref="MockableOperationalInsightsArmClient.GetStorageInsightResource(ResourceIdentifier)"/> instead.</description>
         /// </item>
         /// </summary>
         /// <param name="client"> The <see cref="ArmClient" /> instance the method will execute against. </param>
         /// <param name="id"> The resource ID of the resource to get. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="client"/> is null. </exception>
-        /// <returns> Returns a <see cref="OperationalInsightsClusterResource"/> object. </returns>
-        public static OperationalInsightsClusterResource GetOperationalInsightsClusterResource(this ArmClient client, ResourceIdentifier id)
+        /// <returns> Returns a <see cref="StorageInsightResource"/> object. </returns>
+        public static StorageInsightResource GetStorageInsightResource(this ArmClient client, ResourceIdentifier id)
         {
             Argument.AssertNotNull(client, nameof(client));
 
-            return GetMockableOperationalInsightsArmClient(client).GetOperationalInsightsClusterResource(id);
-        }
-
-        /// <summary>
-        /// Gets an object representing an <see cref="OperationalInsightsWorkspaceResource" /> along with the instance operations that can be performed on it but with no data.
-        /// You can use <see cref="OperationalInsightsWorkspaceResource.CreateResourceIdentifier" /> to create an <see cref="OperationalInsightsWorkspaceResource" /> <see cref="ResourceIdentifier" /> from its components.
-        /// <item>
-        /// <term>Mocking</term>
-        /// <description>To mock this method, please mock <see cref="MockableOperationalInsightsArmClient.GetOperationalInsightsWorkspaceResource(ResourceIdentifier)"/> instead.</description>
-        /// </item>
-        /// </summary>
-        /// <param name="client"> The <see cref="ArmClient" /> instance the method will execute against. </param>
-        /// <param name="id"> The resource ID of the resource to get. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="client"/> is null. </exception>
-        /// <returns> Returns a <see cref="OperationalInsightsWorkspaceResource"/> object. </returns>
-        public static OperationalInsightsWorkspaceResource GetOperationalInsightsWorkspaceResource(this ArmClient client, ResourceIdentifier id)
-        {
-            Argument.AssertNotNull(client, nameof(client));
-
-            return GetMockableOperationalInsightsArmClient(client).GetOperationalInsightsWorkspaceResource(id);
+            return GetMockableOperationalInsightsArmClient(client).GetStorageInsightResource(id);
         }
 
         /// <summary>
@@ -239,6 +220,25 @@ namespace Azure.ResourceManager.OperationalInsights
             Argument.AssertNotNull(client, nameof(client));
 
             return GetMockableOperationalInsightsArmClient(client).GetOperationalInsightsTableResource(id);
+        }
+
+        /// <summary>
+        /// Gets an object representing an <see cref="OperationalInsightsWorkspaceResource" /> along with the instance operations that can be performed on it but with no data.
+        /// You can use <see cref="OperationalInsightsWorkspaceResource.CreateResourceIdentifier" /> to create an <see cref="OperationalInsightsWorkspaceResource" /> <see cref="ResourceIdentifier" /> from its components.
+        /// <item>
+        /// <term>Mocking</term>
+        /// <description>To mock this method, please mock <see cref="MockableOperationalInsightsArmClient.GetOperationalInsightsWorkspaceResource(ResourceIdentifier)"/> instead.</description>
+        /// </item>
+        /// </summary>
+        /// <param name="client"> The <see cref="ArmClient" /> instance the method will execute against. </param>
+        /// <param name="id"> The resource ID of the resource to get. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="client"/> is null. </exception>
+        /// <returns> Returns a <see cref="OperationalInsightsWorkspaceResource"/> object. </returns>
+        public static OperationalInsightsWorkspaceResource GetOperationalInsightsWorkspaceResource(this ArmClient client, ResourceIdentifier id)
+        {
+            Argument.AssertNotNull(client, nameof(client));
+
+            return GetMockableOperationalInsightsArmClient(client).GetOperationalInsightsWorkspaceResource(id);
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2019-09-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -309,7 +309,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2019-09-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -364,7 +364,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2021-06-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -402,7 +402,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2021-06-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -457,7 +457,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -495,7 +495,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -533,7 +533,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2019-09-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -569,7 +569,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2019-09-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -605,7 +605,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// </list>
         /// <item>
@@ -637,7 +637,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// </list>
         /// <item>
@@ -669,7 +669,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2019-09-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -705,7 +705,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2019-09-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -741,7 +741,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2021-06-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -777,7 +777,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2021-06-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -813,7 +813,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -849,7 +849,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -885,7 +885,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// </list>
         /// <item>
@@ -917,7 +917,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// </list>
         /// <item>

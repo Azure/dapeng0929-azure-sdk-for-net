@@ -20,8 +20,8 @@ namespace Azure.ResourceManager.OperationalInsights.Samples
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Update_TablesUpsert()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2022-10-01/examples/TablesUpsert.json
-            // this example is just showing the usage of "Tables_Update" operation, for the dependent resources, they will have to be created separately.
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/TablesUpsert.json
+            // this example is just showing the usage of "Tables_CreateOrUpdate" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
             TokenCredential cred = new DefaultAzureCredential();
@@ -70,7 +70,7 @@ ColumnType = OperationalInsightsColumnType.Guid,
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Get_TablesGet()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2022-10-01/examples/TablesGet.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/TablesGet.json
             // this example is just showing the usage of "Tables_Get" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
@@ -102,7 +102,7 @@ ColumnType = OperationalInsightsColumnType.Guid,
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Delete_TablesDelete()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2022-10-01/examples/TablesDelete.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/TablesDelete.json
             // this example is just showing the usage of "Tables_Delete" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
@@ -130,7 +130,7 @@ ColumnType = OperationalInsightsColumnType.Guid,
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Migrate_TablesMigrate()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2022-10-01/examples/TablesMigrate.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/TablesMigrate.json
             // this example is just showing the usage of "Tables_Migrate" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
@@ -158,7 +158,7 @@ ColumnType = OperationalInsightsColumnType.Guid,
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task CancelSearch_TablesSearchCancel()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2022-10-01/examples/TablesSearchCancel.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/TablesSearchCancel.json
             // this example is just showing the usage of "Tables_CancelSearch" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line

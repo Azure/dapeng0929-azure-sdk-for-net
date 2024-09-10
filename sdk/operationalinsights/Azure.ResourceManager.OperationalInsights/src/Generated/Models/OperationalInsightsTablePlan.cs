@@ -24,11 +24,14 @@ namespace Azure.ResourceManager.OperationalInsights.Models
 
         private const string BasicValue = "Basic";
         private const string AnalyticsValue = "Analytics";
+        private const string AuxiliaryValue = "Auxiliary";
 
-        /// <summary> Logs  that are adjusted to support high volume low value verbose logs. </summary>
+        /// <summary> Logs that are adjusted to support high volume low value verbose logs. </summary>
         public static OperationalInsightsTablePlan Basic { get; } = new OperationalInsightsTablePlan(BasicValue);
         /// <summary> Logs  that allow monitoring and analytics. </summary>
         public static OperationalInsightsTablePlan Analytics { get; } = new OperationalInsightsTablePlan(AnalyticsValue);
+        /// <summary> TBD. </summary>
+        public static OperationalInsightsTablePlan Auxiliary { get; } = new OperationalInsightsTablePlan(AuxiliaryValue);
         /// <summary> Determines if two <see cref="OperationalInsightsTablePlan"/> values are the same. </summary>
         public static bool operator ==(OperationalInsightsTablePlan left, OperationalInsightsTablePlan right) => left.Equals(right);
         /// <summary> Determines if two <see cref="OperationalInsightsTablePlan"/> values are not the same. </summary>

@@ -52,104 +52,6 @@ namespace Azure.ResourceManager.OperationalInsights
         }
 
         /// <summary>
-        /// Update or Create a Log Analytics workspace table.
-        /// <list type="bullet">
-        /// <item>
-        /// <term>Request Path</term>
-        /// <description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}</description>
-        /// </item>
-        /// <item>
-        /// <term>Operation Id</term>
-        /// <description>Tables_CreateOrUpdate</description>
-        /// </item>
-        /// <item>
-        /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
-        /// </item>
-        /// <item>
-        /// <term>Resource</term>
-        /// <description><see cref="OperationalInsightsTableResource"/></description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        /// <param name="tableName"> The name of the table. </param>
-        /// <param name="data"> The parameters required to update table properties. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentException"> <paramref name="tableName"/> is an empty string, and was expected to be non-empty. </exception>
-        /// <exception cref="ArgumentNullException"> <paramref name="tableName"/> or <paramref name="data"/> is null. </exception>
-        public virtual async Task<ArmOperation<OperationalInsightsTableResource>> CreateOrUpdateAsync(WaitUntil waitUntil, string tableName, OperationalInsightsTableData data, CancellationToken cancellationToken = default)
-        {
-            Argument.AssertNotNullOrEmpty(tableName, nameof(tableName));
-            Argument.AssertNotNull(data, nameof(data));
-
-            using var scope = _operationalInsightsTableTablesClientDiagnostics.CreateScope("OperationalInsightsTableCollection.CreateOrUpdate");
-            scope.Start();
-            try
-            {
-                var response = await _operationalInsightsTableTablesRestClient.CreateOrUpdateAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, tableName, data, cancellationToken).ConfigureAwait(false);
-                var operation = new OperationalInsightsArmOperation<OperationalInsightsTableResource>(new OperationalInsightsTableOperationSource(Client), _operationalInsightsTableTablesClientDiagnostics, Pipeline, _operationalInsightsTableTablesRestClient.CreateCreateOrUpdateRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, tableName, data).Request, response, OperationFinalStateVia.AzureAsyncOperation);
-                if (waitUntil == WaitUntil.Completed)
-                    await operation.WaitForCompletionAsync(cancellationToken).ConfigureAwait(false);
-                return operation;
-            }
-            catch (Exception e)
-            {
-                scope.Failed(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Update or Create a Log Analytics workspace table.
-        /// <list type="bullet">
-        /// <item>
-        /// <term>Request Path</term>
-        /// <description>/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}</description>
-        /// </item>
-        /// <item>
-        /// <term>Operation Id</term>
-        /// <description>Tables_CreateOrUpdate</description>
-        /// </item>
-        /// <item>
-        /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
-        /// </item>
-        /// <item>
-        /// <term>Resource</term>
-        /// <description><see cref="OperationalInsightsTableResource"/></description>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        /// <param name="tableName"> The name of the table. </param>
-        /// <param name="data"> The parameters required to update table properties. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentException"> <paramref name="tableName"/> is an empty string, and was expected to be non-empty. </exception>
-        /// <exception cref="ArgumentNullException"> <paramref name="tableName"/> or <paramref name="data"/> is null. </exception>
-        public virtual ArmOperation<OperationalInsightsTableResource> CreateOrUpdate(WaitUntil waitUntil, string tableName, OperationalInsightsTableData data, CancellationToken cancellationToken = default)
-        {
-            Argument.AssertNotNullOrEmpty(tableName, nameof(tableName));
-            Argument.AssertNotNull(data, nameof(data));
-
-            using var scope = _operationalInsightsTableTablesClientDiagnostics.CreateScope("OperationalInsightsTableCollection.CreateOrUpdate");
-            scope.Start();
-            try
-            {
-                var response = _operationalInsightsTableTablesRestClient.CreateOrUpdate(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, tableName, data, cancellationToken);
-                var operation = new OperationalInsightsArmOperation<OperationalInsightsTableResource>(new OperationalInsightsTableOperationSource(Client), _operationalInsightsTableTablesClientDiagnostics, Pipeline, _operationalInsightsTableTablesRestClient.CreateCreateOrUpdateRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, tableName, data).Request, response, OperationFinalStateVia.AzureAsyncOperation);
-                if (waitUntil == WaitUntil.Completed)
-                    operation.WaitForCompletion(cancellationToken);
-                return operation;
-            }
-            catch (Exception e)
-            {
-                scope.Failed(e);
-                throw;
-            }
-        }
-
-        /// <summary>
         /// Gets a Log Analytics workspace table.
         /// <list type="bullet">
         /// <item>
@@ -162,7 +64,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -207,7 +109,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -252,7 +154,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -281,7 +183,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -310,7 +212,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -353,7 +255,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -396,7 +298,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -441,7 +343,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>

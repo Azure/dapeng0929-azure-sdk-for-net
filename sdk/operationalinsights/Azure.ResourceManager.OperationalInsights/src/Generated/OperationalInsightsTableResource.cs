@@ -101,7 +101,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -141,7 +141,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -181,7 +181,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -223,7 +223,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -253,7 +253,7 @@ namespace Azure.ResourceManager.OperationalInsights
         }
 
         /// <summary>
-        /// Update a Log Analytics workspace table.
+        /// Update or Create a Log Analytics workspace table.
         /// <list type="bullet">
         /// <item>
         /// <term>Request Path</term>
@@ -261,11 +261,11 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Operation Id</term>
-        /// <description>Tables_Update</description>
+        /// <description>Tables_CreateOrUpdate</description>
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -285,8 +285,8 @@ namespace Azure.ResourceManager.OperationalInsights
             scope.Start();
             try
             {
-                var response = await _operationalInsightsTableTablesRestClient.UpdateAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data, cancellationToken).ConfigureAwait(false);
-                var operation = new OperationalInsightsArmOperation<OperationalInsightsTableResource>(new OperationalInsightsTableOperationSource(Client), _operationalInsightsTableTablesClientDiagnostics, Pipeline, _operationalInsightsTableTablesRestClient.CreateUpdateRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data).Request, response, OperationFinalStateVia.AzureAsyncOperation);
+                var response = await _operationalInsightsTableTablesRestClient.CreateOrUpdateAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data, cancellationToken).ConfigureAwait(false);
+                var operation = new OperationalInsightsArmOperation<OperationalInsightsTableResource>(new OperationalInsightsTableOperationSource(Client), _operationalInsightsTableTablesClientDiagnostics, Pipeline, _operationalInsightsTableTablesRestClient.CreateCreateOrUpdateRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data).Request, response, OperationFinalStateVia.AzureAsyncOperation);
                 if (waitUntil == WaitUntil.Completed)
                     await operation.WaitForCompletionAsync(cancellationToken).ConfigureAwait(false);
                 return operation;
@@ -299,7 +299,7 @@ namespace Azure.ResourceManager.OperationalInsights
         }
 
         /// <summary>
-        /// Update a Log Analytics workspace table.
+        /// Update or Create a Log Analytics workspace table.
         /// <list type="bullet">
         /// <item>
         /// <term>Request Path</term>
@@ -307,11 +307,11 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Operation Id</term>
-        /// <description>Tables_Update</description>
+        /// <description>Tables_CreateOrUpdate</description>
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -331,8 +331,8 @@ namespace Azure.ResourceManager.OperationalInsights
             scope.Start();
             try
             {
-                var response = _operationalInsightsTableTablesRestClient.Update(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data, cancellationToken);
-                var operation = new OperationalInsightsArmOperation<OperationalInsightsTableResource>(new OperationalInsightsTableOperationSource(Client), _operationalInsightsTableTablesClientDiagnostics, Pipeline, _operationalInsightsTableTablesRestClient.CreateUpdateRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data).Request, response, OperationFinalStateVia.AzureAsyncOperation);
+                var response = _operationalInsightsTableTablesRestClient.CreateOrUpdate(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data, cancellationToken);
+                var operation = new OperationalInsightsArmOperation<OperationalInsightsTableResource>(new OperationalInsightsTableOperationSource(Client), _operationalInsightsTableTablesClientDiagnostics, Pipeline, _operationalInsightsTableTablesRestClient.CreateCreateOrUpdateRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, data).Request, response, OperationFinalStateVia.AzureAsyncOperation);
                 if (waitUntil == WaitUntil.Completed)
                     operation.WaitForCompletion(cancellationToken);
                 return operation;
@@ -357,7 +357,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -395,7 +395,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -433,7 +433,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>
@@ -471,7 +471,7 @@ namespace Azure.ResourceManager.OperationalInsights
         /// </item>
         /// <item>
         /// <term>Default Api Version</term>
-        /// <description>2022-10-01</description>
+        /// <description>2023-09-01</description>
         /// </item>
         /// <item>
         /// <term>Resource</term>

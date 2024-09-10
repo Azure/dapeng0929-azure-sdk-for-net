@@ -19,7 +19,7 @@ namespace Azure.ResourceManager.OperationalInsights.Samples
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Update_LinkedServicesCreate()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2020-08-01/examples/LinkedServicesCreate.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/LinkedServicesCreate.json
             // this example is just showing the usage of "LinkedServices_CreateOrUpdate" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
@@ -56,7 +56,7 @@ namespace Azure.ResourceManager.OperationalInsights.Samples
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Delete_LinkedServicesDelete()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2020-08-01/examples/LinkedServicesDelete.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/LinkedServicesDelete.json
             // this example is just showing the usage of "LinkedServices_Delete" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
@@ -89,7 +89,7 @@ namespace Azure.ResourceManager.OperationalInsights.Samples
         [NUnit.Framework.Ignore("Only verifying that the sample builds")]
         public async Task Get_LinkedServicesGet()
         {
-            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2020-08-01/examples/LinkedServicesGet.json
+            // Generated from example definition: specification/operationalinsights/resource-manager/Microsoft.OperationalInsights/stable/2023-09-01/examples/LinkedServicesGet.json
             // this example is just showing the usage of "LinkedServices_Get" operation, for the dependent resources, they will have to be created separately.
 
             // get your azure access token, for more details of how Azure SDK get your access token, please refer to https://learn.microsoft.com/en-us/dotnet/azure/sdk/authentication?tabs=command-line
