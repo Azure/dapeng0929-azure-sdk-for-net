@@ -26,11 +26,8 @@ namespace Azure.ResourceManager.OracleDatabase.Models
             }
 
             writer.WriteStartObject();
-            if (options.Format != "W")
-            {
-                writer.WritePropertyName("characterSet"u8);
-                writer.WriteStringValue(CharacterSet);
-            }
+            writer.WritePropertyName("characterSet"u8);
+            writer.WriteStringValue(CharacterSet);
             if (options.Format != "W" && _serializedAdditionalRawData != null)
             {
                 foreach (var item in _serializedAdditionalRawData)
