@@ -56,6 +56,11 @@ namespace Azure.ResourceManager.RecoveryServicesSiteRecovery.Models
                 writer.WritePropertyName("testStaticIPAddress"u8);
                 writer.WriteStringValue(TestStaticIPAddress.ToString());
             }
+            if (Optional.IsDefined(TargetNicName))
+            {
+                writer.WritePropertyName("targetNicName"u8);
+                writer.WriteStringValue(TargetNicName);
+            }
             if (options.Format != "W" && _serializedAdditionalRawData != null)
             {
                 foreach (var item in _serializedAdditionalRawData)
@@ -101,6 +106,7 @@ namespace Azure.ResourceManager.RecoveryServicesSiteRecovery.Models
             IPAddress targetStaticIPAddress = default;
             string testSubnetName = default;
             IPAddress testStaticIPAddress = default;
+            string targetNicName = default;
             IDictionary<string, BinaryData> serializedAdditionalRawData = default;
             Dictionary<string, BinaryData> rawDataDictionary = new Dictionary<string, BinaryData>();
             foreach (var property in element.EnumerateObject())
@@ -148,6 +154,11 @@ namespace Azure.ResourceManager.RecoveryServicesSiteRecovery.Models
                     testStaticIPAddress = IPAddress.Parse(property.Value.GetString());
                     continue;
                 }
+                if (property.NameEquals("targetNicName"u8))
+                {
+                    targetNicName = property.Value.GetString();
+                    continue;
+                }
                 if (options.Format != "W")
                 {
                     rawDataDictionary.Add(property.Name, BinaryData.FromString(property.Value.GetRawText()));
@@ -162,6 +173,7 @@ namespace Azure.ResourceManager.RecoveryServicesSiteRecovery.Models
                 targetStaticIPAddress,
                 testSubnetName,
                 testStaticIPAddress,
+                targetNicName,
                 serializedAdditionalRawData);
         }
 
