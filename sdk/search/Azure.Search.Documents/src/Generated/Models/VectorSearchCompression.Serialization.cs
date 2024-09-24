@@ -20,21 +20,28 @@ namespace Azure.Search.Documents.Indexes.Models
             writer.WriteStringValue(CompressionName);
             writer.WritePropertyName("kind"u8);
             writer.WriteStringValue(Kind.ToString());
-            if (Optional.IsDefined(RerankWithOriginalVectors))
+            if (Optional.IsDefined(RescoringOptions))
             {
-                writer.WritePropertyName("rerankWithOriginalVectors"u8);
-                writer.WriteBooleanValue(RerankWithOriginalVectors.Value);
-            }
-            if (Optional.IsDefined(DefaultOversampling))
-            {
-                if (DefaultOversampling != null)
+                if (RescoringOptions != null)
                 {
-                    writer.WritePropertyName("defaultOversampling"u8);
-                    writer.WriteNumberValue(DefaultOversampling.Value);
+                    writer.WritePropertyName("rescoringOptions"u8);
+                    writer.WriteObjectValue(RescoringOptions);
                 }
                 else
                 {
-                    writer.WriteNull("defaultOversampling");
+                    writer.WriteNull("rescoringOptions");
+                }
+            }
+            if (Optional.IsDefined(TruncationDimension))
+            {
+                if (TruncationDimension != null)
+                {
+                    writer.WritePropertyName("truncationDimension"u8);
+                    writer.WriteNumberValue(TruncationDimension.Value);
+                }
+                else
+                {
+                    writer.WriteNull("truncationDimension");
                 }
             }
             writer.WriteEndObject();

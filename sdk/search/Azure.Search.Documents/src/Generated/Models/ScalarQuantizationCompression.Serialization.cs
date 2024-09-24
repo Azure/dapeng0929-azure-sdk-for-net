@@ -24,21 +24,28 @@ namespace Azure.Search.Documents.Indexes.Models
             writer.WriteStringValue(CompressionName);
             writer.WritePropertyName("kind"u8);
             writer.WriteStringValue(Kind.ToString());
-            if (Optional.IsDefined(RerankWithOriginalVectors))
+            if (Optional.IsDefined(RescoringOptions))
             {
-                writer.WritePropertyName("rerankWithOriginalVectors"u8);
-                writer.WriteBooleanValue(RerankWithOriginalVectors.Value);
-            }
-            if (Optional.IsDefined(DefaultOversampling))
-            {
-                if (DefaultOversampling != null)
+                if (RescoringOptions != null)
                 {
-                    writer.WritePropertyName("defaultOversampling"u8);
-                    writer.WriteNumberValue(DefaultOversampling.Value);
+                    writer.WritePropertyName("rescoringOptions"u8);
+                    writer.WriteObjectValue(RescoringOptions);
                 }
                 else
                 {
-                    writer.WriteNull("defaultOversampling");
+                    writer.WriteNull("rescoringOptions");
+                }
+            }
+            if (Optional.IsDefined(TruncationDimension))
+            {
+                if (TruncationDimension != null)
+                {
+                    writer.WritePropertyName("truncationDimension"u8);
+                    writer.WriteNumberValue(TruncationDimension.Value);
+                }
+                else
+                {
+                    writer.WriteNull("truncationDimension");
                 }
             }
             writer.WriteEndObject();
@@ -53,8 +60,8 @@ namespace Azure.Search.Documents.Indexes.Models
             ScalarQuantizationParameters scalarQuantizationParameters = default;
             string name = default;
             VectorSearchCompressionKind kind = default;
-            bool? rerankWithOriginalVectors = default;
-            double? defaultOversampling = default;
+            RescoringOptions rescoringOptions = default;
+            int? truncationDimension = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("scalarQuantizationParameters"u8))
@@ -76,27 +83,28 @@ namespace Azure.Search.Documents.Indexes.Models
                     kind = new VectorSearchCompressionKind(property.Value.GetString());
                     continue;
                 }
-                if (property.NameEquals("rerankWithOriginalVectors"u8))
+                if (property.NameEquals("rescoringOptions"u8))
                 {
                     if (property.Value.ValueKind == JsonValueKind.Null)
                     {
+                        rescoringOptions = null;
                         continue;
                     }
-                    rerankWithOriginalVectors = property.Value.GetBoolean();
+                    rescoringOptions = RescoringOptions.DeserializeRescoringOptions(property.Value);
                     continue;
                 }
-                if (property.NameEquals("defaultOversampling"u8))
+                if (property.NameEquals("truncationDimension"u8))
                 {
                     if (property.Value.ValueKind == JsonValueKind.Null)
                     {
-                        defaultOversampling = null;
+                        truncationDimension = null;
                         continue;
                     }
-                    defaultOversampling = property.Value.GetDouble();
+                    truncationDimension = property.Value.GetInt32();
                     continue;
                 }
             }
-            return new ScalarQuantizationCompression(name, kind, rerankWithOriginalVectors, defaultOversampling, scalarQuantizationParameters);
+            return new ScalarQuantizationCompression(name, kind, rescoringOptions, truncationDimension, scalarQuantizationParameters);
         }
 
         /// <summary> Deserializes the model from a raw response. </summary>
