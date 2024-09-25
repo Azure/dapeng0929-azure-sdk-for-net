@@ -4407,6 +4407,88 @@ namespace Azure.ResourceManager.Network.Models
                 serializedAdditionalRawData: null);
         }
 
+        /// <summary> Initializes a new instance of <see cref="Network.NetworkManagerRoutingConfigurationData"/>. </summary>
+        /// <param name="id"> The id. </param>
+        /// <param name="name"> The name. </param>
+        /// <param name="resourceType"> The resourceType. </param>
+        /// <param name="systemData"> The systemData. </param>
+        /// <param name="description"> A description of the routing configuration. </param>
+        /// <param name="provisioningState"> The provisioning state of the resource. </param>
+        /// <param name="resourceGuid"> Unique identifier for this resource. </param>
+        /// <param name="etag"> A unique read-only string that changes whenever the resource is updated. </param>
+        /// <returns> A new <see cref="Network.NetworkManagerRoutingConfigurationData"/> instance for mocking. </returns>
+        public static NetworkManagerRoutingConfigurationData NetworkManagerRoutingConfigurationData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, string description = null, NetworkProvisioningState? provisioningState = null, Guid? resourceGuid = null, ETag? etag = null)
+        {
+            return new NetworkManagerRoutingConfigurationData(
+                id,
+                name,
+                resourceType,
+                systemData,
+                description,
+                provisioningState,
+                resourceGuid,
+                etag,
+                serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Network.NetworkManagerRoutingRulesData"/>. </summary>
+        /// <param name="id"> The id. </param>
+        /// <param name="name"> The name. </param>
+        /// <param name="resourceType"> The resourceType. </param>
+        /// <param name="systemData"> The systemData. </param>
+        /// <param name="description"> A description of the routing rule collection. </param>
+        /// <param name="provisioningState"> The provisioning state of the resource. </param>
+        /// <param name="resourceGuid"> Unique identifier for this resource. </param>
+        /// <param name="appliesTo"> Groups for configuration. </param>
+        /// <param name="disableBgpRoutePropagation"> Determines whether BGP route propagation is enabled. Defaults to true. </param>
+        /// <param name="etag"> A unique read-only string that changes whenever the resource is updated. </param>
+        /// <returns> A new <see cref="Network.NetworkManagerRoutingRulesData"/> instance for mocking. </returns>
+        public static NetworkManagerRoutingRulesData NetworkManagerRoutingRulesData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, string description = null, NetworkProvisioningState? provisioningState = null, Guid? resourceGuid = null, IEnumerable<NetworkManagerRoutingGroupItem> appliesTo = null, DisableBgpRoutePropagation? disableBgpRoutePropagation = null, ETag? etag = null)
+        {
+            appliesTo ??= new List<NetworkManagerRoutingGroupItem>();
+
+            return new NetworkManagerRoutingRulesData(
+                id,
+                name,
+                resourceType,
+                systemData,
+                description,
+                provisioningState,
+                resourceGuid,
+                appliesTo?.ToList(),
+                disableBgpRoutePropagation,
+                etag,
+                serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Network.NetworkManagerRoutingRuleData"/>. </summary>
+        /// <param name="id"> The id. </param>
+        /// <param name="name"> The name. </param>
+        /// <param name="resourceType"> The resourceType. </param>
+        /// <param name="systemData"> The systemData. </param>
+        /// <param name="description"> A description for this rule. </param>
+        /// <param name="provisioningState"> The provisioning state of the resource. </param>
+        /// <param name="resourceGuid"> Unique identifier for this resource. </param>
+        /// <param name="destination"> Indicates the destination for this particular rule. </param>
+        /// <param name="nextHop"> Indicates the next hop for this particular rule. </param>
+        /// <param name="etag"> A unique read-only string that changes whenever the resource is updated. </param>
+        /// <returns> A new <see cref="Network.NetworkManagerRoutingRuleData"/> instance for mocking. </returns>
+        public static NetworkManagerRoutingRuleData NetworkManagerRoutingRuleData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, string description = null, NetworkProvisioningState? provisioningState = null, Guid? resourceGuid = null, RoutingRuleRouteDestination destination = null, RoutingRuleNextHop nextHop = null, ETag? etag = null)
+        {
+            return new NetworkManagerRoutingRuleData(
+                id,
+                name,
+                resourceType,
+                systemData,
+                description,
+                provisioningState,
+                resourceGuid,
+                destination,
+                nextHop,
+                etag,
+                serializedAdditionalRawData: null);
+        }
+
         /// <summary> Initializes a new instance of <see cref="Network.ScopeConnectionData"/>. </summary>
         /// <param name="id"> The id. </param>
         /// <param name="name"> The name. </param>
@@ -4598,88 +4680,6 @@ namespace Azure.ResourceManager.Network.Models
                 direction,
                 provisioningState,
                 resourceGuid,
-                etag,
-                serializedAdditionalRawData: null);
-        }
-
-        /// <summary> Initializes a new instance of <see cref="Network.NetworkManagerRoutingConfigurationData"/>. </summary>
-        /// <param name="id"> The id. </param>
-        /// <param name="name"> The name. </param>
-        /// <param name="resourceType"> The resourceType. </param>
-        /// <param name="systemData"> The systemData. </param>
-        /// <param name="description"> A description of the routing configuration. </param>
-        /// <param name="provisioningState"> The provisioning state of the resource. </param>
-        /// <param name="resourceGuid"> Unique identifier for this resource. </param>
-        /// <param name="etag"> A unique read-only string that changes whenever the resource is updated. </param>
-        /// <returns> A new <see cref="Network.NetworkManagerRoutingConfigurationData"/> instance for mocking. </returns>
-        public static NetworkManagerRoutingConfigurationData NetworkManagerRoutingConfigurationData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, string description = null, NetworkProvisioningState? provisioningState = null, Guid? resourceGuid = null, ETag? etag = null)
-        {
-            return new NetworkManagerRoutingConfigurationData(
-                id,
-                name,
-                resourceType,
-                systemData,
-                description,
-                provisioningState,
-                resourceGuid,
-                etag,
-                serializedAdditionalRawData: null);
-        }
-
-        /// <summary> Initializes a new instance of <see cref="Network.NetworkManagerRoutingRulesData"/>. </summary>
-        /// <param name="id"> The id. </param>
-        /// <param name="name"> The name. </param>
-        /// <param name="resourceType"> The resourceType. </param>
-        /// <param name="systemData"> The systemData. </param>
-        /// <param name="description"> A description of the routing rule collection. </param>
-        /// <param name="provisioningState"> The provisioning state of the resource. </param>
-        /// <param name="resourceGuid"> Unique identifier for this resource. </param>
-        /// <param name="appliesTo"> Groups for configuration. </param>
-        /// <param name="disableBgpRoutePropagation"> Determines whether BGP route propagation is enabled. Defaults to true. </param>
-        /// <param name="etag"> A unique read-only string that changes whenever the resource is updated. </param>
-        /// <returns> A new <see cref="Network.NetworkManagerRoutingRulesData"/> instance for mocking. </returns>
-        public static NetworkManagerRoutingRulesData NetworkManagerRoutingRulesData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, string description = null, NetworkProvisioningState? provisioningState = null, Guid? resourceGuid = null, IEnumerable<NetworkManagerRoutingGroupItem> appliesTo = null, DisableBgpRoutePropagation? disableBgpRoutePropagation = null, ETag? etag = null)
-        {
-            appliesTo ??= new List<NetworkManagerRoutingGroupItem>();
-
-            return new NetworkManagerRoutingRulesData(
-                id,
-                name,
-                resourceType,
-                systemData,
-                description,
-                provisioningState,
-                resourceGuid,
-                appliesTo?.ToList(),
-                disableBgpRoutePropagation,
-                etag,
-                serializedAdditionalRawData: null);
-        }
-
-        /// <summary> Initializes a new instance of <see cref="Network.NetworkManagerRoutingRuleData"/>. </summary>
-        /// <param name="id"> The id. </param>
-        /// <param name="name"> The name. </param>
-        /// <param name="resourceType"> The resourceType. </param>
-        /// <param name="systemData"> The systemData. </param>
-        /// <param name="description"> A description for this rule. </param>
-        /// <param name="provisioningState"> The provisioning state of the resource. </param>
-        /// <param name="resourceGuid"> Unique identifier for this resource. </param>
-        /// <param name="destination"> Indicates the destination for this particular rule. </param>
-        /// <param name="nextHop"> Indicates the next hop for this particular rule. </param>
-        /// <param name="etag"> A unique read-only string that changes whenever the resource is updated. </param>
-        /// <returns> A new <see cref="Network.NetworkManagerRoutingRuleData"/> instance for mocking. </returns>
-        public static NetworkManagerRoutingRuleData NetworkManagerRoutingRuleData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, string description = null, NetworkProvisioningState? provisioningState = null, Guid? resourceGuid = null, RoutingRuleRouteDestination destination = null, RoutingRuleNextHop nextHop = null, ETag? etag = null)
-        {
-            return new NetworkManagerRoutingRuleData(
-                id,
-                name,
-                resourceType,
-                systemData,
-                description,
-                provisioningState,
-                resourceGuid,
-                destination,
-                nextHop,
                 etag,
                 serializedAdditionalRawData: null);
         }
@@ -6640,6 +6640,97 @@ namespace Azure.ResourceManager.Network.Models
                 asPath,
                 weight,
                 serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Models.ExpressRouteFailoverTestDetails"/>. </summary>
+        /// <param name="peeringLocation"> Peering location of the test. </param>
+        /// <param name="circuits"> All circuits in the peering location. </param>
+        /// <param name="status"> The current status of the test. </param>
+        /// <param name="startOn"> Time when the test was started. </param>
+        /// <param name="endOn"> Time when the test was completed. </param>
+        /// <param name="connections"> All connections to the circuits in the peering location. </param>
+        /// <param name="testGuid"> The unique GUID associated with the test. </param>
+        /// <param name="testType"> The type of failover test. </param>
+        /// <param name="issues"> A list of all issues with the test. </param>
+        /// <returns> A new <see cref="Models.ExpressRouteFailoverTestDetails"/> instance for mocking. </returns>
+        public static ExpressRouteFailoverTestDetails ExpressRouteFailoverTestDetails(string peeringLocation = null, IEnumerable<ExpressRouteFailoverCircuitResourceDetails> circuits = null, FailoverTestStatus? status = null, DateTimeOffset? startOn = null, DateTimeOffset? endOn = null, IEnumerable<ExpressRouteFailoverConnectionResourceDetails> connections = null, Guid? testGuid = null, FailoverTestType? testType = null, IEnumerable<string> issues = null)
+        {
+            circuits ??= new List<ExpressRouteFailoverCircuitResourceDetails>();
+            connections ??= new List<ExpressRouteFailoverConnectionResourceDetails>();
+            issues ??= new List<string>();
+
+            return new ExpressRouteFailoverTestDetails(
+                peeringLocation,
+                circuits?.ToList(),
+                status,
+                startOn,
+                endOn,
+                connections?.ToList(),
+                testGuid,
+                testType,
+                issues?.ToList(),
+                serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Models.ExpressRouteFailoverCircuitResourceDetails"/>. </summary>
+        /// <param name="nrpResourceUri"> NRP Resource URI of the circuit. </param>
+        /// <param name="name"> Circuit Name. </param>
+        /// <param name="connectionName"> Connection name associated with the circuit. </param>
+        /// <returns> A new <see cref="Models.ExpressRouteFailoverCircuitResourceDetails"/> instance for mocking. </returns>
+        public static ExpressRouteFailoverCircuitResourceDetails ExpressRouteFailoverCircuitResourceDetails(Uri nrpResourceUri = null, string name = null, string connectionName = null)
+        {
+            return new ExpressRouteFailoverCircuitResourceDetails(nrpResourceUri, name, connectionName, serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Models.ExpressRouteFailoverConnectionResourceDetails"/>. </summary>
+        /// <param name="nrpResourceUri"> NRP Resource URI of the connection. </param>
+        /// <param name="name"> Connection Name. </param>
+        /// <param name="status"> The current status of the connection. </param>
+        /// <param name="lastUpdatedOn"> Time when the connection was last updated. </param>
+        /// <returns> A new <see cref="Models.ExpressRouteFailoverConnectionResourceDetails"/> instance for mocking. </returns>
+        public static ExpressRouteFailoverConnectionResourceDetails ExpressRouteFailoverConnectionResourceDetails(Uri nrpResourceUri = null, string name = null, FailoverConnectionStatus? status = null, DateTimeOffset? lastUpdatedOn = null)
+        {
+            return new ExpressRouteFailoverConnectionResourceDetails(nrpResourceUri, name, status, lastUpdatedOn, serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Models.ExpressRouteFailoverSingleTestDetails"/>. </summary>
+        /// <param name="peeringLocation"> Peering location of the test. </param>
+        /// <param name="status"> The current status of the test. </param>
+        /// <param name="startTimeUtc"> Time when the test was started. </param>
+        /// <param name="endTimeUtc"> Time when the test was completed. </param>
+        /// <param name="redundantRoutes"> List of routes received from this peering as well as some other peering location. </param>
+        /// <param name="nonRedundantRoutes"> List of al the routes that were received only from this peering location. </param>
+        /// <param name="wasSimulationSuccessful"> Whether the failover simulation was successful or not. </param>
+        /// <param name="failoverConnectionDetails"> List of all the failover connections for this peering location. </param>
+        /// <returns> A new <see cref="Models.ExpressRouteFailoverSingleTestDetails"/> instance for mocking. </returns>
+        public static ExpressRouteFailoverSingleTestDetails ExpressRouteFailoverSingleTestDetails(string peeringLocation = null, FailoverTestStatusForSingleTest? status = null, string startTimeUtc = null, string endTimeUtc = null, IEnumerable<ExpressRouteFailoverRedundantRoute> redundantRoutes = null, IEnumerable<string> nonRedundantRoutes = null, bool? wasSimulationSuccessful = null, IEnumerable<FailoverConnectionDetails> failoverConnectionDetails = null)
+        {
+            redundantRoutes ??= new List<ExpressRouteFailoverRedundantRoute>();
+            nonRedundantRoutes ??= new List<string>();
+            failoverConnectionDetails ??= new List<FailoverConnectionDetails>();
+
+            return new ExpressRouteFailoverSingleTestDetails(
+                peeringLocation,
+                status,
+                startTimeUtc,
+                endTimeUtc,
+                redundantRoutes?.ToList(),
+                nonRedundantRoutes?.ToList(),
+                wasSimulationSuccessful,
+                failoverConnectionDetails?.ToList(),
+                serializedAdditionalRawData: null);
+        }
+
+        /// <summary> Initializes a new instance of <see cref="Models.ExpressRouteFailoverRedundantRoute"/>. </summary>
+        /// <param name="peeringLocations"> A list of all the peering locations for the redundant routes. </param>
+        /// <param name="routes"> A list of all the redundant routes in the peering locations. </param>
+        /// <returns> A new <see cref="Models.ExpressRouteFailoverRedundantRoute"/> instance for mocking. </returns>
+        public static ExpressRouteFailoverRedundantRoute ExpressRouteFailoverRedundantRoute(IEnumerable<string> peeringLocations = null, IEnumerable<string> routes = null)
+        {
+            peeringLocations ??= new List<string>();
+            routes ??= new List<string>();
+
+            return new ExpressRouteFailoverRedundantRoute(peeringLocations?.ToList(), routes?.ToList(), serializedAdditionalRawData: null);
         }
 
         /// <summary> Initializes a new instance of <see cref="Network.VirtualNetworkGatewayConnectionData"/>. </summary>
