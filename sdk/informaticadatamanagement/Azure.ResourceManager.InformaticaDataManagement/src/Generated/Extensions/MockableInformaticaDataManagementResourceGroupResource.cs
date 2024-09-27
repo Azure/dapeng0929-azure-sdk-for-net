@@ -61,7 +61,7 @@ namespace Azure.ResourceManager.InformaticaDataManagement.Mocking
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="organizationName"> Name of the Organizations resource. </param>
+        /// <param name="organizationName"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="organizationName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="organizationName"/> is an empty string, and was expected to be non-empty. </exception>
@@ -92,7 +92,7 @@ namespace Azure.ResourceManager.InformaticaDataManagement.Mocking
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="organizationName"> Name of the Organizations resource. </param>
+        /// <param name="organizationName"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="organizationName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="organizationName"/> is an empty string, and was expected to be non-empty. </exception>

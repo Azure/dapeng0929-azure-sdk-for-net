@@ -274,7 +274,7 @@ namespace Azure.ResourceManager.InformaticaDataManagement
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="patch"> The resource properties to be updated. </param>
+        /// <param name="patch"> The <see cref="InformaticaServerlessRuntimePatch"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="patch"/> is null. </exception>
         public virtual async Task<Response<InformaticaServerlessRuntimeResource>> UpdateAsync(InformaticaServerlessRuntimePatch patch, CancellationToken cancellationToken = default)
@@ -316,7 +316,7 @@ namespace Azure.ResourceManager.InformaticaDataManagement
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="patch"> The resource properties to be updated. </param>
+        /// <param name="patch"> The <see cref="InformaticaServerlessRuntimePatch"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="patch"/> is null. </exception>
         public virtual Response<InformaticaServerlessRuntimeResource> Update(InformaticaServerlessRuntimePatch patch, CancellationToken cancellationToken = default)
