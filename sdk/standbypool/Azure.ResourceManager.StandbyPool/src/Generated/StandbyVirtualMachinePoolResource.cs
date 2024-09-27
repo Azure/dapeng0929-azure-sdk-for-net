@@ -118,7 +118,7 @@ namespace Azure.ResourceManager.StandbyPool
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="standbyVirtualMachineName"> Name of the standby virtual machine. </param>
+        /// <param name="standbyVirtualMachineName"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="standbyVirtualMachineName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="standbyVirtualMachineName"/> is an empty string, and was expected to be non-empty. </exception>
@@ -149,7 +149,7 @@ namespace Azure.ResourceManager.StandbyPool
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="standbyVirtualMachineName"> Name of the standby virtual machine. </param>
+        /// <param name="standbyVirtualMachineName"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="standbyVirtualMachineName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="standbyVirtualMachineName"/> is an empty string, and was expected to be non-empty. </exception>
@@ -187,7 +187,7 @@ namespace Azure.ResourceManager.StandbyPool
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="runtimeView"> The unique identifier for the runtime view. The input string should be the word 'latest', which will get the latest runtime view of the pool, otherwise the request will fail with NotFound exception. </param>
+        /// <param name="runtimeView"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="runtimeView"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="runtimeView"/> is an empty string, and was expected to be non-empty. </exception>
@@ -218,7 +218,7 @@ namespace Azure.ResourceManager.StandbyPool
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="runtimeView"> The unique identifier for the runtime view. The input string should be the word 'latest', which will get the latest runtime view of the pool, otherwise the request will fail with NotFound exception. </param>
+        /// <param name="runtimeView"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="runtimeView"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="runtimeView"/> is an empty string, and was expected to be non-empty. </exception>
@@ -413,7 +413,7 @@ namespace Azure.ResourceManager.StandbyPool
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="patch"> The resource properties to be updated. </param>
+        /// <param name="patch"> The <see cref="StandbyVirtualMachinePoolPatch"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="patch"/> is null. </exception>
         public virtual async Task<Response<StandbyVirtualMachinePoolResource>> UpdateAsync(StandbyVirtualMachinePoolPatch patch, CancellationToken cancellationToken = default)
@@ -455,7 +455,7 @@ namespace Azure.ResourceManager.StandbyPool
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="patch"> The resource properties to be updated. </param>
+        /// <param name="patch"> The <see cref="StandbyVirtualMachinePoolPatch"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="patch"/> is null. </exception>
         public virtual Response<StandbyVirtualMachinePoolResource> Update(StandbyVirtualMachinePoolPatch patch, CancellationToken cancellationToken = default)
