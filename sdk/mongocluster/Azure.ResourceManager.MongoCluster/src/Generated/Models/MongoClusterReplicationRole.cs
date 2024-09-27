@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Replication role of the mongo cluster. </summary>
+    /// <summary> The MongoClusterReplicationRole. </summary>
     public readonly partial struct MongoClusterReplicationRole : IEquatable<MongoClusterReplicationRole>
     {
         private readonly string _value;
@@ -26,11 +26,11 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string AsyncReplicaValue = "AsyncReplica";
         private const string GeoAsyncReplicaValue = "GeoAsyncReplica";
 
-        /// <summary> The cluster is a primary replica. </summary>
+        /// <summary> Primary. </summary>
         public static MongoClusterReplicationRole Primary { get; } = new MongoClusterReplicationRole(PrimaryValue);
-        /// <summary> The cluster is a local asynchronous replica. </summary>
+        /// <summary> AsyncReplica. </summary>
         public static MongoClusterReplicationRole AsyncReplica { get; } = new MongoClusterReplicationRole(AsyncReplicaValue);
-        /// <summary> The cluster is a geo-asynchronous replica. </summary>
+        /// <summary> GeoAsyncReplica. </summary>
         public static MongoClusterReplicationRole GeoAsyncReplica { get; } = new MongoClusterReplicationRole(GeoAsyncReplicaValue);
         /// <summary> Determines if two <see cref="MongoClusterReplicationRole"/> values are the same. </summary>
         public static bool operator ==(MongoClusterReplicationRole left, MongoClusterReplicationRole right) => left.Equals(right);

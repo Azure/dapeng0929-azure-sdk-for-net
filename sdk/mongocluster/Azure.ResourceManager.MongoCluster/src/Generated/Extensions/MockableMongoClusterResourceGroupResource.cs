@@ -61,7 +61,7 @@ namespace Azure.ResourceManager.MongoCluster.Mocking
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="mongoClusterName"> The name of the mongo cluster. </param>
+        /// <param name="mongoClusterName"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="mongoClusterName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="mongoClusterName"/> is an empty string, and was expected to be non-empty. </exception>
@@ -92,7 +92,7 @@ namespace Azure.ResourceManager.MongoCluster.Mocking
         /// </item>
         /// </list>
         /// </summary>
-        /// <param name="mongoClusterName"> The name of the mongo cluster. </param>
+        /// <param name="mongoClusterName"> The <see cref="string"/> to use. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="mongoClusterName"/> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="mongoClusterName"/> is an empty string, and was expected to be non-empty. </exception>

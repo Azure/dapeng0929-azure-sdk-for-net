@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Whether or not public endpoint access is allowed for this Mongo cluster.  Value is optional and default value is 'Enabled'. </summary>
+    /// <summary> The MongoClusterPublicNetworkAccess. </summary>
     public readonly partial struct MongoClusterPublicNetworkAccess : IEquatable<MongoClusterPublicNetworkAccess>
     {
         private readonly string _value;
@@ -25,9 +25,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string EnabledValue = "Enabled";
         private const string DisabledValue = "Disabled";
 
-        /// <summary> If set, mongo cluster can be accessed through private and public methods. </summary>
+        /// <summary> Enabled. </summary>
         public static MongoClusterPublicNetworkAccess Enabled { get; } = new MongoClusterPublicNetworkAccess(EnabledValue);
-        /// <summary> If set, the private endpoints are the exclusive access method. </summary>
+        /// <summary> Disabled. </summary>
         public static MongoClusterPublicNetworkAccess Disabled { get; } = new MongoClusterPublicNetworkAccess(DisabledValue);
         /// <summary> Determines if two <see cref="MongoClusterPublicNetworkAccess"/> values are the same. </summary>
         public static bool operator ==(MongoClusterPublicNetworkAccess left, MongoClusterPublicNetworkAccess right) => left.Equals(right);

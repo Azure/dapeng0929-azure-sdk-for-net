@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The compute properties of the cluster. This includes the virtual-cores/memory and scaling options applied to servers in the cluster. </summary>
+    /// <summary> The ComputeProperties. </summary>
     internal partial class ComputeProperties
     {
         /// <summary>
@@ -51,7 +51,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="ComputeProperties"/>. </summary>
-        /// <param name="tier"> The compute tier to assign to the cluster, where each tier maps to a virtual-core and memory size. Example values: 'M30', 'M40'. </param>
+        /// <param name="tier"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal ComputeProperties(string tier, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -59,7 +59,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The compute tier to assign to the cluster, where each tier maps to a virtual-core and memory size. Example values: 'M30', 'M40'. </summary>
+        /// <summary> Gets or sets the tier. </summary>
         public string Tier { get; set; }
     }
 }

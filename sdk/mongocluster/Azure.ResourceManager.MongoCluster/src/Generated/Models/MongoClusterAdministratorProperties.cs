@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The local administrator login properties. </summary>
+    /// <summary> The MongoClusterAdministratorProperties. </summary>
     public partial class MongoClusterAdministratorProperties
     {
         /// <summary>
@@ -51,8 +51,8 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterAdministratorProperties"/>. </summary>
-        /// <param name="userName"> The administrator user name. </param>
-        /// <param name="password"> The administrator password. </param>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterAdministratorProperties(string userName, string password, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -61,9 +61,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The administrator user name. </summary>
+        /// <summary> Gets or sets the user name. </summary>
         public string UserName { get; set; }
-        /// <summary> The administrator password. </summary>
+        /// <summary> Gets or sets the password. </summary>
         public string Password { get; set; }
     }
 }

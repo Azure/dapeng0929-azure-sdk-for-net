@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The backup properties of the cluster. This includes the earliest restore time and retention settings. </summary>
+    /// <summary> The BackupProperties. </summary>
     internal partial class BackupProperties
     {
         /// <summary>
@@ -51,7 +51,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="BackupProperties"/>. </summary>
-        /// <param name="earliestRestoreTime"> Earliest restore timestamp in UTC ISO8601 format. </param>
+        /// <param name="earliestRestoreTime"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal BackupProperties(string earliestRestoreTime, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -59,7 +59,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> Earliest restore timestamp in UTC ISO8601 format. </summary>
+        /// <summary> Gets the earliest restore time. </summary>
         public string EarliestRestoreTime { get; }
     }
 }

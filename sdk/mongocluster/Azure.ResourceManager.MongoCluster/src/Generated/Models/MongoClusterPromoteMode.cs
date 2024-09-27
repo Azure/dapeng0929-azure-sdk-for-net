@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The mode to apply to a promote operation. </summary>
+    /// <summary> The MongoClusterPromoteMode. </summary>
     public readonly partial struct MongoClusterPromoteMode : IEquatable<MongoClusterPromoteMode>
     {
         private readonly string _value;
@@ -24,7 +24,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
 
         private const string SwitchoverValue = "Switchover";
 
-        /// <summary> Promotion will switch the current replica cluster to the primary role and the original primary will be switched to a replica role, maintaining the replication link. </summary>
+        /// <summary> Switchover. </summary>
         public static MongoClusterPromoteMode Switchover { get; } = new MongoClusterPromoteMode(SwitchoverValue);
         /// <summary> Determines if two <see cref="MongoClusterPromoteMode"/> values are the same. </summary>
         public static bool operator ==(MongoClusterPromoteMode left, MongoClusterPromoteMode right) => left.Equals(right);

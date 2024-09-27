@@ -13,10 +13,7 @@ using Azure.ResourceManager.MongoCluster.Models;
 
 namespace Azure.ResourceManager.MongoCluster
 {
-    /// <summary>
-    /// A class representing the MongoClusterPrivateEndpointConnectionResource data model.
-    /// Concrete proxy resource types can be created by aliasing this type using a specific property type.
-    /// </summary>
+    /// <summary> A class representing the MongoClusterPrivateEndpointConnectionResource data model. </summary>
     public partial class MongoClusterPrivateEndpointConnectionResourceData : ResourceData
     {
         /// <summary>
@@ -61,7 +58,7 @@ namespace Azure.ResourceManager.MongoCluster
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterPrivateEndpointConnectionResourceData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, MongoClusterPrivateEndpointConnectionProperties properties, IDictionary<string, BinaryData> serializedAdditionalRawData) : base(id, name, resourceType, systemData)
         {
@@ -69,7 +66,7 @@ namespace Azure.ResourceManager.MongoCluster
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The resource-specific properties for this resource. </summary>
+        /// <summary> Gets or sets the properties. </summary>
         public MongoClusterPrivateEndpointConnectionProperties Properties { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The response of a MongoCluster list operation. </summary>
+    /// <summary> The MongoClusterListResult. </summary>
     internal partial class MongoClusterListResult
     {
         /// <summary>
@@ -47,7 +47,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private IDictionary<string, BinaryData> _serializedAdditionalRawData;
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterListResult"/>. </summary>
-        /// <param name="value"> The MongoCluster items on this page. </param>
+        /// <param name="value"></param>
         /// <exception cref="ArgumentNullException"> <paramref name="value"/> is null. </exception>
         internal MongoClusterListResult(IEnumerable<MongoClusterData> value)
         {
@@ -57,8 +57,8 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterListResult"/>. </summary>
-        /// <param name="value"> The MongoCluster items on this page. </param>
-        /// <param name="nextLink"> The link to the next page of items. </param>
+        /// <param name="value"></param>
+        /// <param name="nextLink"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterListResult(IReadOnlyList<MongoClusterData> value, Uri nextLink, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -72,9 +72,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         {
         }
 
-        /// <summary> The MongoCluster items on this page. </summary>
+        /// <summary> Gets the value. </summary>
         public IReadOnlyList<MongoClusterData> Value { get; }
-        /// <summary> The link to the next page of items. </summary>
+        /// <summary> Gets the next link. </summary>
         public Uri NextLink { get; }
     }
 }

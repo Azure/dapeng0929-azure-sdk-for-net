@@ -12,7 +12,7 @@ using Azure.ResourceManager.Resources.Models;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Properties of the private endpoint connection. </summary>
+    /// <summary> The MongoClusterPrivateEndpointConnectionProperties. </summary>
     public partial class MongoClusterPrivateEndpointConnectionProperties
     {
         /// <summary>
@@ -48,7 +48,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private IDictionary<string, BinaryData> _serializedAdditionalRawData;
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterPrivateEndpointConnectionProperties"/>. </summary>
-        /// <param name="privateLinkServiceConnectionState"> A collection of information about the state of the connection between service consumer and provider. </param>
+        /// <param name="privateLinkServiceConnectionState"></param>
         /// <exception cref="ArgumentNullException"> <paramref name="privateLinkServiceConnectionState"/> is null. </exception>
         public MongoClusterPrivateEndpointConnectionProperties(MongoClusterPrivateLinkServiceConnectionState privateLinkServiceConnectionState)
         {
@@ -59,10 +59,10 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterPrivateEndpointConnectionProperties"/>. </summary>
-        /// <param name="groupIds"> The group ids for the private endpoint resource. </param>
-        /// <param name="privateEndpoint"> The private endpoint resource. </param>
-        /// <param name="privateLinkServiceConnectionState"> A collection of information about the state of the connection between service consumer and provider. </param>
-        /// <param name="provisioningState"> The provisioning state of the private endpoint connection resource. </param>
+        /// <param name="groupIds"></param>
+        /// <param name="privateEndpoint"> Gets or sets the private endpoint. </param>
+        /// <param name="privateLinkServiceConnectionState"></param>
+        /// <param name="provisioningState"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterPrivateEndpointConnectionProperties(IReadOnlyList<string> groupIds, SubResource privateEndpoint, MongoClusterPrivateLinkServiceConnectionState privateLinkServiceConnectionState, MongoClusterPrivateEndpointConnectionProvisioningState? provisioningState, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -78,9 +78,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         {
         }
 
-        /// <summary> The group ids for the private endpoint resource. </summary>
+        /// <summary> Gets the group ids. </summary>
         public IReadOnlyList<string> GroupIds { get; }
-        /// <summary> The private endpoint resource. </summary>
+        /// <summary> Gets or sets the private endpoint. </summary>
         internal SubResource PrivateEndpoint { get; set; }
         /// <summary> Gets Id. </summary>
         public ResourceIdentifier PrivateEndpointId
@@ -88,9 +88,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
             get => PrivateEndpoint is null ? default : PrivateEndpoint.Id;
         }
 
-        /// <summary> A collection of information about the state of the connection between service consumer and provider. </summary>
+        /// <summary> Gets or sets the private link service connection state. </summary>
         public MongoClusterPrivateLinkServiceConnectionState PrivateLinkServiceConnectionState { get; set; }
-        /// <summary> The provisioning state of the private endpoint connection resource. </summary>
+        /// <summary> Gets the provisioning state. </summary>
         public MongoClusterPrivateEndpointConnectionProvisioningState? ProvisioningState { get; }
     }
 }

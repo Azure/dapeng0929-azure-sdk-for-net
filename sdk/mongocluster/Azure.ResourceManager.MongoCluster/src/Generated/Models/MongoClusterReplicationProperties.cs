@@ -11,7 +11,7 @@ using Azure.Core;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Replica properties of the mongo cluster. </summary>
+    /// <summary> The MongoClusterReplicationProperties. </summary>
     public partial class MongoClusterReplicationProperties
     {
         /// <summary>
@@ -52,9 +52,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterReplicationProperties"/>. </summary>
-        /// <param name="sourceResourceId"> The resource id the source cluster for the replica cluster. </param>
-        /// <param name="role"> The replication role of the cluster. </param>
-        /// <param name="replicationState"> The replication link state of the replica cluster. </param>
+        /// <param name="sourceResourceId"></param>
+        /// <param name="role"></param>
+        /// <param name="replicationState"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterReplicationProperties(ResourceIdentifier sourceResourceId, MongoClusterReplicationRole? role, MongoClusterReplicationState? replicationState, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -64,11 +64,11 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The resource id the source cluster for the replica cluster. </summary>
+        /// <summary> Gets the source resource id. </summary>
         public ResourceIdentifier SourceResourceId { get; }
-        /// <summary> The replication role of the cluster. </summary>
+        /// <summary> Gets the role. </summary>
         public MongoClusterReplicationRole? Role { get; }
-        /// <summary> The replication link state of the replica cluster. </summary>
+        /// <summary> Gets the replication state. </summary>
         public MongoClusterReplicationState? ReplicationState { get; }
     }
 }

@@ -11,7 +11,7 @@ using Azure.Core;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Parameters used for replica operations. </summary>
+    /// <summary> The MongoClusterReplicaContent. </summary>
     public partial class MongoClusterReplicaContent
     {
         /// <summary>
@@ -47,8 +47,8 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private IDictionary<string, BinaryData> _serializedAdditionalRawData;
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterReplicaContent"/>. </summary>
-        /// <param name="sourceResourceId"> The id of the replication source cluster. </param>
-        /// <param name="sourceLocation"> The location of the source cluster. </param>
+        /// <param name="sourceResourceId"></param>
+        /// <param name="sourceLocation"></param>
         /// <exception cref="ArgumentNullException"> <paramref name="sourceResourceId"/> is null. </exception>
         public MongoClusterReplicaContent(ResourceIdentifier sourceResourceId, AzureLocation sourceLocation)
         {
@@ -59,8 +59,8 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterReplicaContent"/>. </summary>
-        /// <param name="sourceResourceId"> The id of the replication source cluster. </param>
-        /// <param name="sourceLocation"> The location of the source cluster. </param>
+        /// <param name="sourceResourceId"></param>
+        /// <param name="sourceLocation"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterReplicaContent(ResourceIdentifier sourceResourceId, AzureLocation sourceLocation, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -74,9 +74,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         {
         }
 
-        /// <summary> The id of the replication source cluster. </summary>
+        /// <summary> Gets or sets the source resource id. </summary>
         public ResourceIdentifier SourceResourceId { get; set; }
-        /// <summary> The location of the source cluster. </summary>
+        /// <summary> Gets or sets the source location. </summary>
         public AzureLocation SourceLocation { get; set; }
     }
 }

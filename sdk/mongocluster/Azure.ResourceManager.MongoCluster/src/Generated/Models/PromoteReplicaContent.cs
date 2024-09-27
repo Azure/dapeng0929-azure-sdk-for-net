@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Promote replica request properties. </summary>
+    /// <summary> The PromoteReplicaContent. </summary>
     public partial class PromoteReplicaContent
     {
         /// <summary>
@@ -46,15 +46,15 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private IDictionary<string, BinaryData> _serializedAdditionalRawData;
 
         /// <summary> Initializes a new instance of <see cref="PromoteReplicaContent"/>. </summary>
-        /// <param name="promoteOption"> The promote option to apply to the operation. </param>
+        /// <param name="promoteOption"></param>
         public PromoteReplicaContent(MongoClusterPromoteOption promoteOption)
         {
             PromoteOption = promoteOption;
         }
 
         /// <summary> Initializes a new instance of <see cref="PromoteReplicaContent"/>. </summary>
-        /// <param name="promoteOption"> The promote option to apply to the operation. </param>
-        /// <param name="mode"> The mode to apply to the promote operation. Value is optional and default value is 'Switchover'. </param>
+        /// <param name="promoteOption"></param>
+        /// <param name="mode"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal PromoteReplicaContent(MongoClusterPromoteOption promoteOption, MongoClusterPromoteMode? mode, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -68,9 +68,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         {
         }
 
-        /// <summary> The promote option to apply to the operation. </summary>
+        /// <summary> Gets the promote option. </summary>
         public MongoClusterPromoteOption PromoteOption { get; }
-        /// <summary> The mode to apply to the promote operation. Value is optional and default value is 'Switchover'. </summary>
+        /// <summary> Gets or sets the mode. </summary>
         public MongoClusterPromoteMode? Mode { get; set; }
     }
 }

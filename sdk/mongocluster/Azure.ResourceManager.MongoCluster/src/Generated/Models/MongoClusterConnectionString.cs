@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Connection string for the mongo cluster. </summary>
+    /// <summary> The MongoClusterConnectionString. </summary>
     public partial class MongoClusterConnectionString
     {
         /// <summary>
@@ -51,9 +51,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterConnectionString"/>. </summary>
-        /// <param name="uri"> Value of the connection string. </param>
-        /// <param name="description"> Description of the connection string. </param>
-        /// <param name="name"> Name of the connection string. </param>
+        /// <param name="uri"></param>
+        /// <param name="description"></param>
+        /// <param name="name"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterConnectionString(string uri, string description, string name, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -63,11 +63,11 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> Value of the connection string. </summary>
+        /// <summary> Gets the uri. </summary>
         public string Uri { get; }
-        /// <summary> Description of the connection string. </summary>
+        /// <summary> Gets the description. </summary>
         public string Description { get; }
-        /// <summary> Name of the connection string. </summary>
+        /// <summary> Gets the name. </summary>
         public string Name { get; }
     }
 }

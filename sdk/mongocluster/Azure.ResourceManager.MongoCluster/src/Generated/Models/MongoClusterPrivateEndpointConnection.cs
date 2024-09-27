@@ -12,7 +12,7 @@ using Azure.ResourceManager.Models;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The private endpoint connection resource. </summary>
+    /// <summary> The MongoClusterPrivateEndpointConnection. </summary>
     public partial class MongoClusterPrivateEndpointConnection : ResourceData
     {
         /// <summary>
@@ -57,7 +57,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The private endpoint connection properties. </param>
+        /// <param name="properties"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterPrivateEndpointConnection(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, MongoClusterPrivateEndpointConnectionProperties properties, IDictionary<string, BinaryData> serializedAdditionalRawData) : base(id, name, resourceType, systemData)
         {
@@ -65,7 +65,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The private endpoint connection properties. </summary>
+        /// <summary> Gets the properties. </summary>
         public MongoClusterPrivateEndpointConnectionProperties Properties { get; }
     }
 }

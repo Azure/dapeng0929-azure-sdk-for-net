@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The high availability modes for a cluster. </summary>
+    /// <summary> The HighAvailabilityMode. </summary>
     public readonly partial struct HighAvailabilityMode : IEquatable<HighAvailabilityMode>
     {
         private readonly string _value;
@@ -26,11 +26,11 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string SameZoneValue = "SameZone";
         private const string ZoneRedundantPreferredValue = "ZoneRedundantPreferred";
 
-        /// <summary> High availability mode is disabled. This mode is can see availability impact during faults or maintenance and is not recommended for production. </summary>
+        /// <summary> Disabled. </summary>
         public static HighAvailabilityMode Disabled { get; } = new HighAvailabilityMode(DisabledValue);
-        /// <summary> High availability mode is enabled, where each server in a shard is placed in the same availability zone. </summary>
+        /// <summary> SameZone. </summary>
         public static HighAvailabilityMode SameZone { get; } = new HighAvailabilityMode(SameZoneValue);
-        /// <summary> High availability mode is enabled and preferences ZoneRedundant if availability zones capacity is available in the region, otherwise falls-back to provisioning with SameZone. </summary>
+        /// <summary> ZoneRedundantPreferred. </summary>
         public static HighAvailabilityMode ZoneRedundantPreferred { get; } = new HighAvailabilityMode(ZoneRedundantPreferredValue);
         /// <summary> Determines if two <see cref="HighAvailabilityMode"/> values are the same. </summary>
         public static bool operator ==(HighAvailabilityMode left, HighAvailabilityMode right) => left.Equals(right);

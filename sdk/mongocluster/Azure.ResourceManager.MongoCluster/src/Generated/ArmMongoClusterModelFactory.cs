@@ -21,7 +21,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <returns> A new <see cref="Models.MongoClusterReplica"/> instance for mocking. </returns>
         public static MongoClusterReplica MongoClusterReplica(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, MongoClusterProperties properties = null)
         {
@@ -35,24 +35,24 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterProperties"/>. </summary>
-        /// <param name="createMode"> The mode to create a mongo cluster. </param>
-        /// <param name="restoreParameters"> The parameters to create a point-in-time restore mongo cluster. </param>
-        /// <param name="replicaParameters"> The parameters to create a replica mongo cluster. </param>
-        /// <param name="administrator"> The local administrator properties for the mongo cluster. </param>
-        /// <param name="serverVersion"> The Mongo DB server version. Defaults to the latest available version if not specified. </param>
-        /// <param name="connectionString"> The default mongo connection string for the cluster. </param>
-        /// <param name="provisioningState"> The provisioning state of the mongo cluster. </param>
-        /// <param name="clusterStatus"> The status of the mongo cluster. </param>
-        /// <param name="publicNetworkAccess"> Whether or not public endpoint access is allowed for this mongo cluster. </param>
-        /// <param name="highAvailabilityTargetMode"> The high availability properties of the mongo cluster. </param>
-        /// <param name="storageSizeGb"> The storage properties of the mongo cluster. </param>
-        /// <param name="shardingShardCount"> The sharding properties of the mongo cluster. </param>
-        /// <param name="computeTier"> The compute properties of the mongo cluster. </param>
-        /// <param name="backupEarliestRestoreTime"> The backup properties of the mongo cluster. </param>
-        /// <param name="privateEndpointConnections"> List of private endpoint connections. </param>
-        /// <param name="previewFeatures"> List of private endpoint connections. </param>
-        /// <param name="replica"> The replication properties for the mongo cluster. </param>
-        /// <param name="infrastructureVersion"> The infrastructure version the cluster is provisioned on. </param>
+        /// <param name="createMode"></param>
+        /// <param name="restoreParameters"></param>
+        /// <param name="replicaParameters"></param>
+        /// <param name="administrator"></param>
+        /// <param name="serverVersion"></param>
+        /// <param name="connectionString"></param>
+        /// <param name="provisioningState"></param>
+        /// <param name="clusterStatus"></param>
+        /// <param name="publicNetworkAccess"></param>
+        /// <param name="highAvailabilityTargetMode"></param>
+        /// <param name="storageSizeGb"></param>
+        /// <param name="shardingShardCount"></param>
+        /// <param name="computeTier"></param>
+        /// <param name="backupEarliestRestoreTime"></param>
+        /// <param name="privateEndpointConnections"></param>
+        /// <param name="previewFeatures"></param>
+        /// <param name="replica"></param>
+        /// <param name="infrastructureVersion"></param>
         /// <returns> A new <see cref="Models.MongoClusterProperties"/> instance for mocking. </returns>
         public static MongoClusterProperties MongoClusterProperties(MongoClusterCreateMode? createMode = null, MongoClusterRestoreContent restoreParameters = null, MongoClusterReplicaContent replicaParameters = null, MongoClusterAdministratorProperties administrator = null, string serverVersion = null, string connectionString = null, MongoClusterProvisioningState? provisioningState = null, MongoClusterStatus? clusterStatus = null, MongoClusterPublicNetworkAccess? publicNetworkAccess = null, HighAvailabilityMode? highAvailabilityTargetMode = null, long? storageSizeGb = null, int? shardingShardCount = null, string computeTier = null, string backupEarliestRestoreTime = null, IEnumerable<MongoClusterPrivateEndpointConnection> privateEndpointConnections = null, IEnumerable<MongoClusterPreviewFeature> previewFeatures = null, MongoClusterReplicationProperties replica = null, string infrastructureVersion = null)
         {
@@ -86,7 +86,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The private endpoint connection properties. </param>
+        /// <param name="properties"></param>
         /// <returns> A new <see cref="Models.MongoClusterPrivateEndpointConnection"/> instance for mocking. </returns>
         public static MongoClusterPrivateEndpointConnection MongoClusterPrivateEndpointConnection(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, MongoClusterPrivateEndpointConnectionProperties properties = null)
         {
@@ -100,10 +100,10 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterPrivateEndpointConnectionProperties"/>. </summary>
-        /// <param name="groupIds"> The group ids for the private endpoint resource. </param>
-        /// <param name="privateEndpointId"> The private endpoint resource. </param>
-        /// <param name="privateLinkServiceConnectionState"> A collection of information about the state of the connection between service consumer and provider. </param>
-        /// <param name="provisioningState"> The provisioning state of the private endpoint connection resource. </param>
+        /// <param name="groupIds"></param>
+        /// <param name="privateEndpointId"> Gets or sets the private endpoint. </param>
+        /// <param name="privateLinkServiceConnectionState"></param>
+        /// <param name="provisioningState"></param>
         /// <returns> A new <see cref="Models.MongoClusterPrivateEndpointConnectionProperties"/> instance for mocking. </returns>
         public static MongoClusterPrivateEndpointConnectionProperties MongoClusterPrivateEndpointConnectionProperties(IEnumerable<string> groupIds = null, ResourceIdentifier privateEndpointId = null, MongoClusterPrivateLinkServiceConnectionState privateLinkServiceConnectionState = null, MongoClusterPrivateEndpointConnectionProvisioningState? provisioningState = null)
         {
@@ -113,9 +113,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterReplicationProperties"/>. </summary>
-        /// <param name="sourceResourceId"> The resource id the source cluster for the replica cluster. </param>
-        /// <param name="role"> The replication role of the cluster. </param>
-        /// <param name="replicationState"> The replication link state of the replica cluster. </param>
+        /// <param name="sourceResourceId"></param>
+        /// <param name="role"></param>
+        /// <param name="replicationState"></param>
         /// <returns> A new <see cref="Models.MongoClusterReplicationProperties"/> instance for mocking. </returns>
         public static MongoClusterReplicationProperties MongoClusterReplicationProperties(ResourceIdentifier sourceResourceId = null, MongoClusterReplicationRole? role = null, MongoClusterReplicationState? replicationState = null)
         {
@@ -127,7 +127,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <returns> A new <see cref="Models.MongoClusterPrivateLinkResourceData"/> instance for mocking. </returns>
         public static MongoClusterPrivateLinkResourceData MongoClusterPrivateLinkResourceData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, MongoClusterPrivateLinkResourceProperties properties = null)
         {
@@ -141,9 +141,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterPrivateLinkResourceProperties"/>. </summary>
-        /// <param name="groupId"> The private link resource group id. </param>
-        /// <param name="requiredMembers"> The private link resource required member names. </param>
-        /// <param name="requiredZoneNames"> The private link resource private link DNS zone name. </param>
+        /// <param name="groupId"></param>
+        /// <param name="requiredMembers"></param>
+        /// <param name="requiredZoneNames"></param>
         /// <returns> A new <see cref="Models.MongoClusterPrivateLinkResourceProperties"/> instance for mocking. </returns>
         public static MongoClusterPrivateLinkResourceProperties MongoClusterPrivateLinkResourceProperties(string groupId = null, IEnumerable<string> requiredMembers = null, IEnumerable<string> requiredZoneNames = null)
         {
@@ -158,7 +158,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <returns> A new <see cref="MongoCluster.MongoClusterPrivateEndpointConnectionResourceData"/> instance for mocking. </returns>
         public static MongoClusterPrivateEndpointConnectionResourceData MongoClusterPrivateEndpointConnectionResourceData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, MongoClusterPrivateEndpointConnectionProperties properties = null)
         {
@@ -176,7 +176,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <returns> A new <see cref="MongoCluster.MongoClusterFirewallRuleData"/> instance for mocking. </returns>
         public static MongoClusterFirewallRuleData MongoClusterFirewallRuleData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, MongoClusterFirewallRuleProperties properties = null)
         {
@@ -190,9 +190,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterFirewallRuleProperties"/>. </summary>
-        /// <param name="provisioningState"> The provisioning state of the firewall rule. </param>
-        /// <param name="startIPAddress"> The start IP address of the mongo cluster firewall rule. Must be IPv4 format. </param>
-        /// <param name="endIPAddress"> The end IP address of the mongo cluster firewall rule. Must be IPv4 format. </param>
+        /// <param name="provisioningState"></param>
+        /// <param name="startIPAddress"></param>
+        /// <param name="endIPAddress"></param>
         /// <returns> A new <see cref="Models.MongoClusterFirewallRuleProperties"/> instance for mocking. </returns>
         public static MongoClusterFirewallRuleProperties MongoClusterFirewallRuleProperties(MongoClusterProvisioningState? provisioningState = null, string startIPAddress = null, string endIPAddress = null)
         {
@@ -206,7 +206,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         /// <param name="systemData"> The systemData. </param>
         /// <param name="tags"> The tags. </param>
         /// <param name="location"> The location. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <returns> A new <see cref="MongoCluster.MongoClusterData"/> instance for mocking. </returns>
         public static MongoClusterData MongoClusterData(ResourceIdentifier id = null, string name = null, ResourceType resourceType = default, SystemData systemData = null, IDictionary<string, string> tags = null, AzureLocation location = default, MongoClusterProperties properties = null)
         {
@@ -224,7 +224,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterConnectionStringsResult"/>. </summary>
-        /// <param name="connectionStrings"> An array that contains the connection strings for a mongo cluster. </param>
+        /// <param name="connectionStrings"></param>
         /// <returns> A new <see cref="Models.MongoClusterConnectionStringsResult"/> instance for mocking. </returns>
         public static MongoClusterConnectionStringsResult MongoClusterConnectionStringsResult(IEnumerable<MongoClusterConnectionString> connectionStrings = null)
         {
@@ -234,9 +234,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterConnectionString"/>. </summary>
-        /// <param name="uri"> Value of the connection string. </param>
-        /// <param name="description"> Description of the connection string. </param>
-        /// <param name="name"> Name of the connection string. </param>
+        /// <param name="uri"></param>
+        /// <param name="description"></param>
+        /// <param name="name"></param>
         /// <returns> A new <see cref="Models.MongoClusterConnectionString"/> instance for mocking. </returns>
         public static MongoClusterConnectionString MongoClusterConnectionString(string uri = null, string description = null, string name = null)
         {
@@ -244,9 +244,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.MongoClusterNameAvailabilityResult"/>. </summary>
-        /// <param name="isNameAvailable"> Indicates if the resource name is available. </param>
-        /// <param name="reason"> The reason why the given name is not available. </param>
-        /// <param name="message"> Detailed reason why the given name is not available. </param>
+        /// <param name="isNameAvailable"></param>
+        /// <param name="reason"></param>
+        /// <param name="message"></param>
         /// <returns> A new <see cref="Models.MongoClusterNameAvailabilityResult"/> instance for mocking. </returns>
         public static MongoClusterNameAvailabilityResult MongoClusterNameAvailabilityResult(bool? isNameAvailable = null, MongoClusterNameUnavailableReason? reason = null, string message = null)
         {
@@ -254,8 +254,8 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="Models.PromoteReplicaContent"/>. </summary>
-        /// <param name="promoteOption"> The promote option to apply to the operation. </param>
-        /// <param name="mode"> The mode to apply to the promote operation. Value is optional and default value is 'Switchover'. </param>
+        /// <param name="promoteOption"></param>
+        /// <param name="mode"></param>
         /// <returns> A new <see cref="Models.PromoteReplicaContent"/> instance for mocking. </returns>
         public static PromoteReplicaContent PromoteReplicaContent(MongoClusterPromoteOption promoteOption = default, MongoClusterPromoteMode? mode = null)
         {

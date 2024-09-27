@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The storage properties of the cluster. This includes the data storage size and scaling applied to servers in the cluster. </summary>
+    /// <summary> The StorageProperties. </summary>
     internal partial class StorageProperties
     {
         /// <summary>
@@ -51,7 +51,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="StorageProperties"/>. </summary>
-        /// <param name="sizeGb"> The size of the data disk assigned to each server. </param>
+        /// <param name="sizeGb"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal StorageProperties(long? sizeGb, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -59,7 +59,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The size of the data disk assigned to each server. </summary>
+        /// <summary> Gets or sets the size gb. </summary>
         public long? SizeGb { get; set; }
     }
 }

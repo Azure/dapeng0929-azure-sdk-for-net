@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The provisioning state of the last accepted operation. </summary>
+    /// <summary> The MongoClusterProvisioningState. </summary>
     public readonly partial struct MongoClusterProvisioningState : IEquatable<MongoClusterProvisioningState>
     {
         private readonly string _value;
@@ -29,17 +29,17 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string UpdatingValue = "Updating";
         private const string DroppingValue = "Dropping";
 
-        /// <summary> Resource has been created. </summary>
+        /// <summary> Succeeded. </summary>
         public static MongoClusterProvisioningState Succeeded { get; } = new MongoClusterProvisioningState(SucceededValue);
-        /// <summary> Resource creation failed. </summary>
+        /// <summary> Failed. </summary>
         public static MongoClusterProvisioningState Failed { get; } = new MongoClusterProvisioningState(FailedValue);
-        /// <summary> Resource creation was canceled. </summary>
+        /// <summary> Canceled. </summary>
         public static MongoClusterProvisioningState Canceled { get; } = new MongoClusterProvisioningState(CanceledValue);
-        /// <summary> An operation is in-progress on the resource. </summary>
+        /// <summary> InProgress. </summary>
         public static MongoClusterProvisioningState InProgress { get; } = new MongoClusterProvisioningState(InProgressValue);
-        /// <summary> An update operation is in-progress on the resource. </summary>
+        /// <summary> Updating. </summary>
         public static MongoClusterProvisioningState Updating { get; } = new MongoClusterProvisioningState(UpdatingValue);
-        /// <summary> A drop operation is in-progress on the resource. </summary>
+        /// <summary> Dropping. </summary>
         public static MongoClusterProvisioningState Dropping { get; } = new MongoClusterProvisioningState(DroppingValue);
         /// <summary> Determines if two <see cref="MongoClusterProvisioningState"/> values are the same. </summary>
         public static bool operator ==(MongoClusterProvisioningState left, MongoClusterProvisioningState right) => left.Equals(right);

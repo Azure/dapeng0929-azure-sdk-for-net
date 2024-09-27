@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Possible reasons for a name not being available. </summary>
+    /// <summary> The MongoClusterNameUnavailableReason. </summary>
     public readonly partial struct MongoClusterNameUnavailableReason : IEquatable<MongoClusterNameUnavailableReason>
     {
         private readonly string _value;
@@ -25,9 +25,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string InvalidValue = "Invalid";
         private const string AlreadyExistsValue = "AlreadyExists";
 
-        /// <summary> Name is invalid. </summary>
+        /// <summary> Invalid. </summary>
         public static MongoClusterNameUnavailableReason Invalid { get; } = new MongoClusterNameUnavailableReason(InvalidValue);
-        /// <summary> Name already exists. </summary>
+        /// <summary> AlreadyExists. </summary>
         public static MongoClusterNameUnavailableReason AlreadyExists { get; } = new MongoClusterNameUnavailableReason(AlreadyExistsValue);
         /// <summary> Determines if two <see cref="MongoClusterNameUnavailableReason"/> values are the same. </summary>
         public static bool operator ==(MongoClusterNameUnavailableReason left, MongoClusterNameUnavailableReason right) => left.Equals(right);

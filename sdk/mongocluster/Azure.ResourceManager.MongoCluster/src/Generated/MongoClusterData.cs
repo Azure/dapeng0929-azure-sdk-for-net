@@ -13,10 +13,7 @@ using Azure.ResourceManager.MongoCluster.Models;
 
 namespace Azure.ResourceManager.MongoCluster
 {
-    /// <summary>
-    /// A class representing the MongoCluster data model.
-    /// Represents a mongo cluster resource.
-    /// </summary>
+    /// <summary> A class representing the MongoCluster data model. </summary>
     public partial class MongoClusterData : TrackedResourceData
     {
         /// <summary>
@@ -64,7 +61,7 @@ namespace Azure.ResourceManager.MongoCluster
         /// <param name="systemData"> The systemData. </param>
         /// <param name="tags"> The tags. </param>
         /// <param name="location"> The location. </param>
-        /// <param name="properties"> The resource-specific properties for this resource. </param>
+        /// <param name="properties"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, IDictionary<string, string> tags, AzureLocation location, MongoClusterProperties properties, IDictionary<string, BinaryData> serializedAdditionalRawData) : base(id, name, resourceType, systemData, tags, location)
         {
@@ -77,7 +74,7 @@ namespace Azure.ResourceManager.MongoCluster
         {
         }
 
-        /// <summary> The resource-specific properties for this resource. </summary>
+        /// <summary> Gets or sets the properties. </summary>
         public MongoClusterProperties Properties { get; set; }
     }
 }

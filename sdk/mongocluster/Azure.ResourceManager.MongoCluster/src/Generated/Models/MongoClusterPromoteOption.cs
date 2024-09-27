@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The option to apply to a promote operation. </summary>
+    /// <summary> The MongoClusterPromoteOption. </summary>
     public readonly partial struct MongoClusterPromoteOption : IEquatable<MongoClusterPromoteOption>
     {
         private readonly string _value;
@@ -24,7 +24,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
 
         private const string ForcedValue = "Forced";
 
-        /// <summary> Promote option forces the promotion without waiting for the replica to be caught up to the primary. This can result in data-loss so should only be used during disaster recovery scenarios. </summary>
+        /// <summary> Forced. </summary>
         public static MongoClusterPromoteOption Forced { get; } = new MongoClusterPromoteOption(ForcedValue);
         /// <summary> Determines if two <see cref="MongoClusterPromoteOption"/> values are the same. </summary>
         public static bool operator ==(MongoClusterPromoteOption left, MongoClusterPromoteOption right) => left.Equals(right);

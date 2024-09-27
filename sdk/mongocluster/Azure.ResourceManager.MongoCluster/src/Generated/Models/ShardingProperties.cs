@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The sharding properties of the cluster. This includes the shard count and scaling options for the cluster. </summary>
+    /// <summary> The ShardingProperties. </summary>
     internal partial class ShardingProperties
     {
         /// <summary>
@@ -51,7 +51,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="ShardingProperties"/>. </summary>
-        /// <param name="shardCount"> Number of shards to provision on the cluster. </param>
+        /// <param name="shardCount"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal ShardingProperties(int? shardCount, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -59,7 +59,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> Number of shards to provision on the cluster. </summary>
+        /// <summary> Gets or sets the shard count. </summary>
         public int? ShardCount { get; set; }
     }
 }

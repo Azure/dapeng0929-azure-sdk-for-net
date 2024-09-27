@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The high availability properties of the cluster. </summary>
+    /// <summary> The HighAvailabilityProperties. </summary>
     internal partial class HighAvailabilityProperties
     {
         /// <summary>
@@ -51,7 +51,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="HighAvailabilityProperties"/>. </summary>
-        /// <param name="targetMode"> The target high availability mode requested for the cluster. </param>
+        /// <param name="targetMode"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal HighAvailabilityProperties(HighAvailabilityMode? targetMode, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -59,7 +59,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The target high availability mode requested for the cluster. </summary>
+        /// <summary> Gets or sets the target mode. </summary>
         public HighAvailabilityMode? TargetMode { get; set; }
     }
 }

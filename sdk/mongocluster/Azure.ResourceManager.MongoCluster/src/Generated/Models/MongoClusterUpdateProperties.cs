@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The updatable properties of the MongoCluster. </summary>
+    /// <summary> The MongoClusterUpdateProperties. </summary>
     public partial class MongoClusterUpdateProperties
     {
         /// <summary>
@@ -52,15 +52,15 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterUpdateProperties"/>. </summary>
-        /// <param name="administrator"> The local administrator properties for the mongo cluster. </param>
-        /// <param name="serverVersion"> The Mongo DB server version. Defaults to the latest available version if not specified. </param>
-        /// <param name="publicNetworkAccess"> Whether or not public endpoint access is allowed for this mongo cluster. </param>
-        /// <param name="highAvailability"> The high availability properties of the mongo cluster. </param>
-        /// <param name="storage"> The storage properties of the mongo cluster. </param>
-        /// <param name="sharding"> The sharding properties of the mongo cluster. </param>
-        /// <param name="compute"> The compute properties of the mongo cluster. </param>
-        /// <param name="backup"> The backup properties of the mongo cluster. </param>
-        /// <param name="previewFeatures"> List of private endpoint connections. </param>
+        /// <param name="administrator"></param>
+        /// <param name="serverVersion"></param>
+        /// <param name="publicNetworkAccess"></param>
+        /// <param name="highAvailability"></param>
+        /// <param name="storage"></param>
+        /// <param name="sharding"></param>
+        /// <param name="compute"></param>
+        /// <param name="backup"></param>
+        /// <param name="previewFeatures"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterUpdateProperties(MongoClusterAdministratorProperties administrator, string serverVersion, MongoClusterPublicNetworkAccess? publicNetworkAccess, HighAvailabilityProperties highAvailability, StorageProperties storage, ShardingProperties sharding, ComputeProperties compute, BackupProperties backup, IList<MongoClusterPreviewFeature> previewFeatures, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -76,15 +76,15 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The local administrator properties for the mongo cluster. </summary>
+        /// <summary> Gets or sets the administrator. </summary>
         public MongoClusterAdministratorProperties Administrator { get; set; }
-        /// <summary> The Mongo DB server version. Defaults to the latest available version if not specified. </summary>
+        /// <summary> Gets or sets the server version. </summary>
         public string ServerVersion { get; set; }
-        /// <summary> Whether or not public endpoint access is allowed for this mongo cluster. </summary>
+        /// <summary> Gets or sets the public network access. </summary>
         public MongoClusterPublicNetworkAccess? PublicNetworkAccess { get; set; }
-        /// <summary> The high availability properties of the mongo cluster. </summary>
+        /// <summary> Gets or sets the high availability. </summary>
         internal HighAvailabilityProperties HighAvailability { get; set; }
-        /// <summary> The target high availability mode requested for the cluster. </summary>
+        /// <summary> Gets or sets the high availability target mode. </summary>
         public HighAvailabilityMode? HighAvailabilityTargetMode
         {
             get => HighAvailability is null ? default : HighAvailability.TargetMode;
@@ -96,9 +96,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
             }
         }
 
-        /// <summary> The storage properties of the mongo cluster. </summary>
+        /// <summary> Gets or sets the storage. </summary>
         internal StorageProperties Storage { get; set; }
-        /// <summary> The size of the data disk assigned to each server. </summary>
+        /// <summary> Gets or sets the storage size gb. </summary>
         public long? StorageSizeGb
         {
             get => Storage is null ? default : Storage.SizeGb;
@@ -110,9 +110,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
             }
         }
 
-        /// <summary> The sharding properties of the mongo cluster. </summary>
+        /// <summary> Gets or sets the sharding. </summary>
         internal ShardingProperties Sharding { get; set; }
-        /// <summary> Number of shards to provision on the cluster. </summary>
+        /// <summary> Gets or sets the sharding shard count. </summary>
         public int? ShardingShardCount
         {
             get => Sharding is null ? default : Sharding.ShardCount;
@@ -124,9 +124,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
             }
         }
 
-        /// <summary> The compute properties of the mongo cluster. </summary>
+        /// <summary> Gets or sets the compute. </summary>
         internal ComputeProperties Compute { get; set; }
-        /// <summary> The compute tier to assign to the cluster, where each tier maps to a virtual-core and memory size. Example values: 'M30', 'M40'. </summary>
+        /// <summary> Gets or sets the compute tier. </summary>
         public string ComputeTier
         {
             get => Compute is null ? default : Compute.Tier;
@@ -138,15 +138,15 @@ namespace Azure.ResourceManager.MongoCluster.Models
             }
         }
 
-        /// <summary> The backup properties of the mongo cluster. </summary>
+        /// <summary> Gets or sets the backup. </summary>
         internal BackupProperties Backup { get; set; }
-        /// <summary> Earliest restore timestamp in UTC ISO8601 format. </summary>
+        /// <summary> Gets the backup earliest restore time. </summary>
         public string BackupEarliestRestoreTime
         {
             get => Backup is null ? default : Backup.EarliestRestoreTime;
         }
 
-        /// <summary> List of private endpoint connections. </summary>
+        /// <summary> Gets the preview features. </summary>
         public IList<MongoClusterPreviewFeature> PreviewFeatures { get; }
     }
 }

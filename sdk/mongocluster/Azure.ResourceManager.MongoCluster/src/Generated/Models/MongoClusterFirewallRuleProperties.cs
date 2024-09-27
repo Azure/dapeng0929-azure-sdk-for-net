@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The properties of a mongo cluster firewall rule. </summary>
+    /// <summary> The MongoClusterFirewallRuleProperties. </summary>
     public partial class MongoClusterFirewallRuleProperties
     {
         /// <summary>
@@ -46,8 +46,8 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private IDictionary<string, BinaryData> _serializedAdditionalRawData;
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterFirewallRuleProperties"/>. </summary>
-        /// <param name="startIPAddress"> The start IP address of the mongo cluster firewall rule. Must be IPv4 format. </param>
-        /// <param name="endIPAddress"> The end IP address of the mongo cluster firewall rule. Must be IPv4 format. </param>
+        /// <param name="startIPAddress"></param>
+        /// <param name="endIPAddress"></param>
         /// <exception cref="ArgumentNullException"> <paramref name="startIPAddress"/> or <paramref name="endIPAddress"/> is null. </exception>
         public MongoClusterFirewallRuleProperties(string startIPAddress, string endIPAddress)
         {
@@ -59,9 +59,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterFirewallRuleProperties"/>. </summary>
-        /// <param name="provisioningState"> The provisioning state of the firewall rule. </param>
-        /// <param name="startIPAddress"> The start IP address of the mongo cluster firewall rule. Must be IPv4 format. </param>
-        /// <param name="endIPAddress"> The end IP address of the mongo cluster firewall rule. Must be IPv4 format. </param>
+        /// <param name="provisioningState"></param>
+        /// <param name="startIPAddress"></param>
+        /// <param name="endIPAddress"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterFirewallRuleProperties(MongoClusterProvisioningState? provisioningState, string startIPAddress, string endIPAddress, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -76,11 +76,11 @@ namespace Azure.ResourceManager.MongoCluster.Models
         {
         }
 
-        /// <summary> The provisioning state of the firewall rule. </summary>
+        /// <summary> Gets the provisioning state. </summary>
         public MongoClusterProvisioningState? ProvisioningState { get; }
-        /// <summary> The start IP address of the mongo cluster firewall rule. Must be IPv4 format. </summary>
+        /// <summary> Gets or sets the start ip address. </summary>
         public string StartIPAddress { get; set; }
-        /// <summary> The end IP address of the mongo cluster firewall rule. Must be IPv4 format. </summary>
+        /// <summary> Gets or sets the end ip address. </summary>
         public string EndIPAddress { get; set; }
     }
 }

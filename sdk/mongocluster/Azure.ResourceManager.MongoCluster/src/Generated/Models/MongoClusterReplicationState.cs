@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The state of the replication link between the replica and source cluster. </summary>
+    /// <summary> The MongoClusterReplicationState. </summary>
     public readonly partial struct MongoClusterReplicationState : IEquatable<MongoClusterReplicationState>
     {
         private readonly string _value;
@@ -29,17 +29,17 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string BrokenValue = "Broken";
         private const string ReconfiguringValue = "Reconfiguring";
 
-        /// <summary> Replication link is active. </summary>
+        /// <summary> Active. </summary>
         public static MongoClusterReplicationState Active { get; } = new MongoClusterReplicationState(ActiveValue);
-        /// <summary> Replica is catching-up with the primary. This can occur after the replica is created or after a promotion is triggered. </summary>
+        /// <summary> Catchup. </summary>
         public static MongoClusterReplicationState Catchup { get; } = new MongoClusterReplicationState(CatchupValue);
-        /// <summary> Replica and replication link to the primary is being created. </summary>
+        /// <summary> Provisioning. </summary>
         public static MongoClusterReplicationState Provisioning { get; } = new MongoClusterReplicationState(ProvisioningValue);
-        /// <summary> Replication link is being updated due to a change on the replica or an upgrade. </summary>
+        /// <summary> Updating. </summary>
         public static MongoClusterReplicationState Updating { get; } = new MongoClusterReplicationState(UpdatingValue);
-        /// <summary> Replication link is broken and the replica may need to be recreated. </summary>
+        /// <summary> Broken. </summary>
         public static MongoClusterReplicationState Broken { get; } = new MongoClusterReplicationState(BrokenValue);
-        /// <summary> Replication link is re-configuring due to a promotion event. </summary>
+        /// <summary> Reconfiguring. </summary>
         public static MongoClusterReplicationState Reconfiguring { get; } = new MongoClusterReplicationState(ReconfiguringValue);
         /// <summary> Determines if two <see cref="MongoClusterReplicationState"/> values are the same. </summary>
         public static bool operator ==(MongoClusterReplicationState left, MongoClusterReplicationState right) => left.Equals(right);

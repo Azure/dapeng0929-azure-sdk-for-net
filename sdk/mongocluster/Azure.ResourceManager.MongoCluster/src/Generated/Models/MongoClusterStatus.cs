@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The status of the Mongo cluster resource. </summary>
+    /// <summary> The MongoClusterStatus. </summary>
     public readonly partial struct MongoClusterStatus : IEquatable<MongoClusterStatus>
     {
         private readonly string _value;
@@ -30,19 +30,19 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string StoppedValue = "Stopped";
         private const string DroppingValue = "Dropping";
 
-        /// <summary> The mongo cluster resource is ready for use. </summary>
+        /// <summary> Ready. </summary>
         public static MongoClusterStatus Ready { get; } = new MongoClusterStatus(ReadyValue);
-        /// <summary> The mongo cluster resource is being provisioned. </summary>
+        /// <summary> Provisioning. </summary>
         public static MongoClusterStatus Provisioning { get; } = new MongoClusterStatus(ProvisioningValue);
-        /// <summary> The mongo cluster resource is being updated. </summary>
+        /// <summary> Updating. </summary>
         public static MongoClusterStatus Updating { get; } = new MongoClusterStatus(UpdatingValue);
-        /// <summary> The mongo cluster resource is being started. </summary>
+        /// <summary> Starting. </summary>
         public static MongoClusterStatus Starting { get; } = new MongoClusterStatus(StartingValue);
-        /// <summary> The mongo cluster resource is being stopped. </summary>
+        /// <summary> Stopping. </summary>
         public static MongoClusterStatus Stopping { get; } = new MongoClusterStatus(StoppingValue);
-        /// <summary> The mongo cluster resource is stopped. </summary>
+        /// <summary> Stopped. </summary>
         public static MongoClusterStatus Stopped { get; } = new MongoClusterStatus(StoppedValue);
-        /// <summary> The mongo cluster resource is being dropped. </summary>
+        /// <summary> Dropping. </summary>
         public static MongoClusterStatus Dropping { get; } = new MongoClusterStatus(DroppingValue);
         /// <summary> Determines if two <see cref="MongoClusterStatus"/> values are the same. </summary>
         public static bool operator ==(MongoClusterStatus left, MongoClusterStatus right) => left.Equals(right);

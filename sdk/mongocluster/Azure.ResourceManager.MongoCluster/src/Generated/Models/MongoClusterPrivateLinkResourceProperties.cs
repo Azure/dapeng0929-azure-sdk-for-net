@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Properties of a private link resource. </summary>
+    /// <summary> The MongoClusterPrivateLinkResourceProperties. </summary>
     public partial class MongoClusterPrivateLinkResourceProperties
     {
         /// <summary>
@@ -53,9 +53,9 @@ namespace Azure.ResourceManager.MongoCluster.Models
         }
 
         /// <summary> Initializes a new instance of <see cref="MongoClusterPrivateLinkResourceProperties"/>. </summary>
-        /// <param name="groupId"> The private link resource group id. </param>
-        /// <param name="requiredMembers"> The private link resource required member names. </param>
-        /// <param name="requiredZoneNames"> The private link resource private link DNS zone name. </param>
+        /// <param name="groupId"></param>
+        /// <param name="requiredMembers"></param>
+        /// <param name="requiredZoneNames"></param>
         /// <param name="serializedAdditionalRawData"> Keeps track of any properties unknown to the library. </param>
         internal MongoClusterPrivateLinkResourceProperties(string groupId, IReadOnlyList<string> requiredMembers, IReadOnlyList<string> requiredZoneNames, IDictionary<string, BinaryData> serializedAdditionalRawData)
         {
@@ -65,11 +65,11 @@ namespace Azure.ResourceManager.MongoCluster.Models
             _serializedAdditionalRawData = serializedAdditionalRawData;
         }
 
-        /// <summary> The private link resource group id. </summary>
+        /// <summary> Gets the group id. </summary>
         public string GroupId { get; }
-        /// <summary> The private link resource required member names. </summary>
+        /// <summary> Gets the required members. </summary>
         public IReadOnlyList<string> RequiredMembers { get; }
-        /// <summary> The private link resource private link DNS zone name. </summary>
+        /// <summary> Gets the required zone names. </summary>
         public IReadOnlyList<string> RequiredZoneNames { get; }
     }
 }

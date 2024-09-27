@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> Preview features that can be enabled on a mongo cluster. </summary>
+    /// <summary> The MongoClusterPreviewFeature. </summary>
     public readonly partial struct MongoClusterPreviewFeature : IEquatable<MongoClusterPreviewFeature>
     {
         private readonly string _value;
@@ -24,7 +24,7 @@ namespace Azure.ResourceManager.MongoCluster.Models
 
         private const string GeoReplicasValue = "GeoReplicas";
 
-        /// <summary> Enables geo replicas preview feature. The feature must be set at create-time on new cluster to enable linking a geo-replica cluster to it. </summary>
+        /// <summary> GeoReplicas. </summary>
         public static MongoClusterPreviewFeature GeoReplicas { get; } = new MongoClusterPreviewFeature(GeoReplicasValue);
         /// <summary> Determines if two <see cref="MongoClusterPreviewFeature"/> values are the same. </summary>
         public static bool operator ==(MongoClusterPreviewFeature left, MongoClusterPreviewFeature right) => left.Equals(right);

@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Azure.ResourceManager.MongoCluster.Models
 {
-    /// <summary> The mode that the Mongo Cluster is created with. </summary>
+    /// <summary> The MongoClusterCreateMode. </summary>
     public readonly partial struct MongoClusterCreateMode : IEquatable<MongoClusterCreateMode>
     {
         private readonly string _value;
@@ -27,13 +27,13 @@ namespace Azure.ResourceManager.MongoCluster.Models
         private const string GeoReplicaValue = "GeoReplica";
         private const string ReplicaValue = "Replica";
 
-        /// <summary> Create a new mongo cluster. </summary>
+        /// <summary> Default. </summary>
         public static MongoClusterCreateMode Default { get; } = new MongoClusterCreateMode(DefaultValue);
-        /// <summary> Create a mongo cluster from a restore point-in-time. </summary>
+        /// <summary> PointInTimeRestore. </summary>
         public static MongoClusterCreateMode PointInTimeRestore { get; } = new MongoClusterCreateMode(PointInTimeRestoreValue);
-        /// <summary> Create a replica cluster in distinct geographic region from the source cluster. </summary>
+        /// <summary> GeoReplica. </summary>
         public static MongoClusterCreateMode GeoReplica { get; } = new MongoClusterCreateMode(GeoReplicaValue);
-        /// <summary> Create a replica cluster in the same geographic region as the source cluster. </summary>
+        /// <summary> Replica. </summary>
         public static MongoClusterCreateMode Replica { get; } = new MongoClusterCreateMode(ReplicaValue);
         /// <summary> Determines if two <see cref="MongoClusterCreateMode"/> values are the same. </summary>
         public static bool operator ==(MongoClusterCreateMode left, MongoClusterCreateMode right) => left.Equals(right);
